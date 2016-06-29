@@ -18,8 +18,6 @@ Authentication is required, and the user needs to have filled out their seller s
 
 ## User Stories
 
-#### Guest
-
 *I would love for this app is to search the database and return the current price reflected for the chosen album (for both guests and users) - but in reading the documenation I'm not sure this is possible without linking to an actual discogs account. If I cannot show the price, I will focus on one of the other options.*
 
 * As a guest, I can search the database, to find a specific album/title/artist.
