@@ -22,7 +22,6 @@ Authentication is required, and the user needs to have filled out their seller s
 
 * As a guest, I can search the database, to find a specific album/title/artist.
 * As a guest, I can create an account, so I can save information about albums in my account
-#### User
 * As a user, I can search the database, to find a specific album/title/artist
 * As a user, I can login to my account, to access stored data
 

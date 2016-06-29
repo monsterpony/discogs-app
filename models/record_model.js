@@ -19,11 +19,10 @@ function showArtist (req, res, next){
   //console.log(results.results[0])
     res.results = albums.results;//last results is object key
     next()
-    //console.log(res.results)
-})//end request
 
-  //console.log(res.results.length, "outside")
-}//end showdata
+  })//end request
+
+}//end showArtist
 
 // results = JSON.parse(results)
 // console.log(results)
