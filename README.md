@@ -50,4 +50,4 @@ Authentication is required, and the user needs to have filled out their seller s
 * Potential changes around possibilities of accessing images/price
 * User stories reflect in views...what besides the login/logout option changes based on user?
 
-![wireframe](wireframe_quick.jpg)
+![wireframe](/images/wireframe_quick.jpg)
