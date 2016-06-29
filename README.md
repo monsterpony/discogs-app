@@ -1,5 +1,19 @@
 # Discog App
 
+Discogs API: https://www.discogs.com/developers/
+Discogs API Forum: https://www.discogs.com/forum/topic/1082
+
+###Images:
+https://www.discogs.com/developers/#page:marketplace,header:marketplace-price-suggestions
+The Image resource represents a user-contributed image of a database object, such as Artists or Releases. Image requests require authentication and are subject to rate limiting.
+
+It’s unlikely that you’ll ever have to construct an image URL; images keys on other resources use fully-qualified URLs, including hostname and protocol. To retrieve images, authenticate via OAuth or Discogs Auth and fetch the object that contains the image of interest (e.g., the release, user profile, etc.). The image URL will be in the response using the HTTPS protocol, and requesting that URL should succeed.
+
+###Price:
+https://www.discogs.com/developers/#page:marketplace,header:marketplace-price-suggestions
+Retrieve price suggestions for the provided Release ID. If no suggestions are available, an empty object will be returned.
+Authentication is required, and the user needs to have filled out their seller settings. Suggested prices will be denominated in the user’s selling currency.
+
 
 
 ## User Stories
@@ -35,6 +49,8 @@
 
 **Favorite/Add to collection show only for logged in users or does it show and if clicked and user is not logged in the guest/user is promted to create an account or sign in to add to collection/favorite?
 
-### Rough Wireframe as unsure if I can get images/price
+### Rough Wireframe
+* Potential changes around possibilities of accessing images/price
+* User stories reflect in views...what besides the login/logout option changes based on user?
 
 ![wireframe](wireframe_quick.jpg)
