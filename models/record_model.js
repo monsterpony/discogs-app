@@ -2,6 +2,26 @@
 
 const request = require('request')
 
+function showTitle (req, res, next){
+
+  let options = {
+  url: 'https://api.discogs.com/database/search?type=release&'+req.params.title+'=untrue&artist=burial&key=iMVrcwxrFLXPkdYQmOGv&secret=TUkEkKwOQuElkfourOJmzVIHoBFnYHAj',
+  headers: {
+    'User-Agent': 'request'
+  }//header object
+}//options object
+
+  request(options, function(error, response, data){
+    if (error) throw error
+    let titles = JSON.parse(data)
+  //console.log(results.results[0])
+    res.results = titles.results;//last results is object key
+
+    next()
+
+  })//end request
+
+}//end showArtist
 
 
 function showArtist (req, res, next){
@@ -27,4 +47,4 @@ function showArtist (req, res, next){
 // results = JSON.parse(results)
 // console.log(results)
 
-module.exports = { showArtist }
+module.exports = { showArtist, showTitle }
