@@ -1,5 +1,5 @@
 const { MongoClient } = require('mongodb');
-const dbConnection = 'mongodb://localhost:27017/auth_practice';
+const dbConnection = 'mongodb://localhost:27017/users';
 const bcrypt = require('bcrypt');
 const salt = bcrypt.genSalt(10);
 
@@ -25,7 +25,7 @@ function createUser(req, res, next){
           email: email,
           passwordDigest: hash
         }//userInfo
-        db.collection('users').insertOne(userInfo, function (err, result){
+        db.collection('user').insertOne(userInfo, function (err, result){
             if (err) throw err;
             next();
         })//end collection
@@ -41,7 +41,7 @@ function loginUser(req, res, next){
 
   MongoClient.connect(dbConnection, function(err, db){
     //mongo query from users db inside auth_practice
-    db.collection('users').findOne({"email": email}, function(err, user){
+    db.collection('user').findOne({"email": email}, function(err, user){
       if( err ) throw err;
       if( user === null){
         console.log('cannot find user with email', email);

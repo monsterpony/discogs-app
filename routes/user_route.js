@@ -1,12 +1,12 @@
-const router = require('express').Router();
+const userRouter = require('express').Router();
 const { createUser, loginUser } = require('../models/user_model');
 //short for const createUser = require('../models/user').createUser
 
-router.get('/new', function(req, res){
+userRouter.get('/new', function(req, res){
   res.render('user/new');
 })
 
-router.post('/new', createUser, loginUser, function(req, res){
+userRouter.post('/new', createUser, loginUser, function(req, res){
   console.log(res.user);
   req.session.user = res.user;
 
@@ -16,18 +16,18 @@ router.post('/new', createUser, loginUser, function(req, res){
   })
 })
 
-router.get('/login', function(req, res){
+userRouter.get('/login', function(req, res){
   res.render('user/login')
 })
 
 
-router.post('/login', loginUser, function(req, res){
+userRouter.post('/login', loginUser, function(req, res){
   console.log(res.user);
   req.session.user = res.user;
 
   req.session.save(function(err){
     if(err) throw err
-     res.redirect('/')
+     res.render('user/dashboard', {user: req.session.user})
   })
 })
 
@@ -40,7 +40,7 @@ router.post('/login', loginUser, function(req, res){
 //   });
 // })
 
-router.get('/logout', function(req, res){
+userRouter.get('/logout', function(req, res){
   //logging out
   req.session.destroy(function(err){
     //takes you home
@@ -48,4 +48,5 @@ router.get('/logout', function(req, res){
   });
 })
 
-module.exports = router;
+module.exports = userRouter;
+

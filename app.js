@@ -9,11 +9,13 @@ const methodOverride = require('method-override')
 
 const recordRoute = require('./routes/record_route')
 const userRoute   = require('./routes/user_route')
+const homeRoute   = require('./routes/home_route')
 
 
 app.use(logger('dev'));
 app.use(express.static(path.join(__dirname, 'public')))
 app.use('/bower_components', express.static(path.join(__dirname, '/bower_components')))
+app.use(bodyParser.urlencoded({extended:false}))
 app.use(methodOverride('_method'))
 app.use(session({
   saveUninitialized: true,
@@ -30,13 +32,17 @@ app.set('view engine', 'ejs')
 
 //ROUTES
 
+
 app.use('/search', recordRoute)
 app.use('/user', userRoute)
+app.use('/', homeRoute)
 
 
-app.get('/', function(req, res){
-  res.render('index')
-})
+
+
+// app.get('/', function(req, res){
+//   res.render('index')
+// })
 
 
 

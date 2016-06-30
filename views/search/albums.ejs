@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../partials/head %>
+</head>
+<body>
+<h1>You Are Albuming</h1>
+    <%if(albums.length){ %>
+    <ol>
+      <% albums.forEach( function(album){  %>
+
+      <li>
+        <ul>
+
+      <li><a href="https://www.discogs.com/artist/<%=album.id%>">LINK TO DISCOGS ID</a></li>
+
+      <% if (album.title) { %>
+
+      <li><a href="<%=album.resource_url%>"><%=album.title%></a></li>
+      <% } %>
+
+      <% if (album.year) { %>
+      <li><%=album.year%></li>
+       <% } %>
+
+      <% if (album.format) { %>
+      <li><%=album.format%></li>
+      <% } %>
+
+     <% if (album.id) { %>
+      <li><%=album.id%></li>
+      <% } %>
+
+      <% if ((album.style) && (album.style.length !== 0) ){ %>
+      <li><%=album.style%></li>
+       <% } %>
+
+        <% if (album.community) { %>
+      <li>Want: <%=album['community'].want%>, Have: <%=album['community'].have%></li>
+       <% } %>
+
+      <% if (album.thumb) { %>
+      <li><img src="<%=album.thumb%>"></li>
+        <% } %>
+
+      </ul>
+      </li>
+
+      <% }) %>
+       </ol>
+    <% }else{ %>
+    <ol>
+      <li>No Results found</li>
+      </ol>
+    <% } %>
+</body>
+</html>
