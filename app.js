@@ -23,20 +23,22 @@ app.use(session({
 }))
 
 
-app.use('/artist', recordRoute)
-app.use('/title', recordRoute)
-app.use('/user', userRoute)
 
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 
+
 //ROUTES
 
-//home (get '/' and render home)
+app.use('/search', recordRoute)
+app.use('/user', userRoute)
 
-// app.get('/', function(req, res){
-//   res.render('index')
-// })
+
+app.get('/', function(req, res){
+  res.render('index')
+})
+
+
 
 
 

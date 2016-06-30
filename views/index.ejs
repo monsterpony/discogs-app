@@ -5,5 +5,18 @@
 </head>
 <body>
 <h1>You are Indexing</h1>
+
+<ol>
+    <%if(albums.length){ %>
+      <% albums.forEach( function(album){  %>
+      <li>[<%=album.title%>]
+
+      </li>
+      <% }) %>
+    <% }else{ %>
+      <li>No Results found</li>
+    <% } %>
+  </ol>
+
 </body>
 </html>
