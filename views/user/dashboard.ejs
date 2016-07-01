@@ -10,15 +10,14 @@
   <h1>
   <% if(user) { %>
     Welcome, <%= user.fname %> <%= user.lname %>
+    <p></p>
 
     <!-- REMOVED WITH NAV BAR LINK BUT SEE BUTTON PATH ON ROUTE JS
 
     <form action="user/logout?_method=DELETE" method="post">
       <input type="submit" value="Log Out">
     </form> -->
-  <% } else { %>
-    Welcome, Guest
-  <% } %>
+  <% }
   </h1>
 
 </body>

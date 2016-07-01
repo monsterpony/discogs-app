@@ -33,7 +33,7 @@ app.set('view engine', 'ejs')
 //ROUTES
 
 
-app.use('/search', recordRoute)
+app.use('/api', recordRoute)
 app.use('/user', userRoute)
 app.use('/', homeRoute)
 

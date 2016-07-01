@@ -4,22 +4,24 @@
   <% include ./partials/head %>
 </head>
 <body>
-<h1>You are Indexing</h1>
+<h1>Welcome To Home</h1>
 
 
-  <h1>
-  <% if(user) { %>
-    Welcome, <%= user.fname %> <%= user.lname %>
 
-    <!-- REMOVED WITH NAV BAR LINK BUT SEE BUTTON PATH ON ROUTE JS
+<form action="/api/search" method="get">
+<label for="selectChoice">Choose Your Search</label>
+<select name="searchType" id="selectChoice">
+        <option value="artists">Search Artist</option>
+        <option value="title">Search Title</option>
+</select>
 
-    <form action="user/logout?_method=DELETE" method="post">
-      <input type="submit" value="Log Out">
-    </form> -->
-  <% } else { %>
-    Welcome, Guest
-  <% } %>
-  </h1>
+<label for="searchInput">Choose your search</label>
+<input name="searchValue" type="text" placeholder="Enter Artist or Title" id="searchInput">
+
+<button class="search-button" value='submit'>Search Discogs</button>
+</form>
+
+
 
 </body>
 </html>

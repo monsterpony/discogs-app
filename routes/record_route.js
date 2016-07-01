@@ -7,15 +7,11 @@ const recordModel = require('../models/record_model')
 
 
 
-recordRouter.get('/artist/:artist', recordModel.showArtist, (req, res)=>{
+recordRouter.get('/search', recordModel.showArtist, (req, res)=>{
 
-  console.log(res.results)
-  res.render('search/albums', {albums:res.results});
+   //res.render('search/albums', {albums:res.results});
+  res.json(res.results)
 })
 
-recordRouter.get('/title/:title', recordModel.showTitle, (req, res)=>{
-  //console.log(res.results)
-  res.send('title page');
-})
 
 module.exports = recordRouter

@@ -23,7 +23,8 @@ function createUser(req, res, next){
           fname: req.body.fname,
           lname: req.body.lname,
           email: email,
-          passwordDigest: hash
+          passwordDigest: hash,
+          favorites: []
         }//userInfo
         db.collection('user').insertOne(userInfo, function (err, result){
             if (err) throw err;

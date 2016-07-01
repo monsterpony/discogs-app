@@ -5,58 +5,39 @@ const KEY = process.env.DISCOGS_KEY
 const SECRET = process.env.DISCOGS_SECRET
 
 
-
 module.exports = {
 
 
 showArtist (req, res, next){
 
+  const musicSearch = req.query.searchType
+  const inputValue = req.query.searchValue
+  const URL = 'https://api.discogs.com/database/search'
+
+
   request.get({
-    url: 'https://api.discogs.com/database/search',
+    url: URL,
     qs: {
-      'q': req.params.artist,
+      'q': inputValue,
       'key': KEY,
       'secret': SECRET
     },
     headers: {
       'User-Agent': 'request'
-    }
+    },
+    json: true
   }, (err, response, data)=>{
     if ( err ) throw err
-      let albums = JSON.parse(data)
+      let albums = data
     res.results = albums.results
+    console.log(res.results)
+    console.log(URL)
     next()
   }//end function
 
   )//end request.get
 
 },//end showArtist
-
-showTitle (req, res, next){
-
-
-  request.get({
-    url: 'https://api.discogs.com/database/search',
-    qs: {
-      'q': req.params.title,
-      'key': KEY,
-      'secret': SECRET
-    },
-    headers: {
-      'User-Agent': 'request'
-    }
-  }, (err, response, data)=>{
-    if ( err ) throw err
-      let titles = JSON.parse(data)
-    res.results = titles.results
-    next()
-  }//end function
-
-  )//end request.get
-
-}//end showTitle
-
-
 
 
 }//module-exports
