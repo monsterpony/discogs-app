@@ -4,24 +4,39 @@
   <% include ./partials/head %>
 </head>
 <body>
-<h1>Welcome To Home</h1>
+<% include ./partials/header %>
 
 
+<div class="container home">
+  <div class="row">
+   <h1>Welcome The Discogs Database</h1>
+   <h4>Use the quick search option below to find an album or artist on the fly, or login to access a deeper dig.</h4>
+  </div><!-- //end row -->
+  <div class="row">
 
-<form action="/api/search" method="get">
-<label for="selectChoice">Choose Your Search</label>
-<select name="type" id="selectChoice">
-        <option value="artist">Search Artist</option>
-        <option value="title">Search Title</option>
-</select>
+      <div class="columns four">
+          <select name="type" id="selectChoice">
+                  <option value="artist">Search Artist</option>
+                  <option value="title">Search Title</option>
+          </select>
+      </div><!-- end six -->
 
-<label for="searchInput">Choose your search</label>
-<input name="value" type="text" placeholder="Enter Artist or Title" id="searchInput">
+      <div class="columns eight">
+          <input name="value" type="text" placeholder="Enter Artist or Title Name" id="searchInput">
+      </div><!-- end six -->
 
-<button class="search-button" value='submit'>Search Discogs</button>
-</form>
+  </div><!-- end row -->
 
+  <div class="row">
+    <div class="column twelve">
+      <button class="search-button" value='submit'>Quick Search</button>
+    </div><!-- end four -->
+  </div><!-- end row -->
 
+ <div class='search-list'>
+ </div><!-- end search list -->
+
+  </div><!-- end container -->
 
 </body>
 </html>

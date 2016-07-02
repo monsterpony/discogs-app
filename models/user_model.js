@@ -13,10 +13,9 @@ function createSecure(email, password, callback){
 }//end createSecure
 
 function createUser(req, res, next){
-  createSecure( req.body.email, req.body.password, saveUser)
+  if(req.body.email && req.body.password && req.body.fname && req.body.lame){
+     createSecure( req.body.email, req.body.password, saveUser)
     function saveUser(email, hash){
-      console.log('email', email);
-      console.log('passwordDigest', hash)
       //fires off whatever is in our req.body
       MongoClient.connect(dbConnection, function(err,db){
         let userInfo = {
@@ -24,7 +23,6 @@ function createUser(req, res, next){
           lname: req.body.lname,
           email: email,
           passwordDigest: hash,
-          favorites: []
         }//userInfo
         db.collection('user').insertOne(userInfo, function (err, result){
             if (err) throw err;
@@ -32,6 +30,10 @@ function createUser(req, res, next){
         })//end collection
       })//end mongoClient
     }//end saveUser
+  } else {
+    console.log('fill out form')
+  }//end elses
+
 }//end createUser
 
 //LOGIN
@@ -54,20 +56,20 @@ function loginUser(req, res, next){
   })//end mongoClient connect
 }//end loginUser
 
-function addFavorite (req,res,next){
-  //entire favorites array
-  let email = req.body.email
-  let favorites = req.body.favorites
-  MongoCliennt.connect(dbConnection, function(err,db){
+// function addFavorite (req,res,next){
+//   //entire favorites array
+//   let email = req.body.email
+//   let favorites = req.body.favorites
+//   MongoCliennt.connect(dbConnection, function(err,db){
 
-    db.collection('user').findOne({"email": email}, function (err, user){
-      if (err) throw err
-      console.log(user, 'USER')
-    })//end dbcollection
-  })//end mongoClient
+//     db.collection('user').findOne({"email": email}, function (err, user){
+//       if (err) throw err
+//       console.log(user, 'USER')
+//     })//end dbcollection
+//   })//end mongoClient
 
-  //resp what to do add
-}
+//   //resp what to do add
+// }
 
 
 

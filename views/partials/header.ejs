@@ -1,0 +1,13 @@
+<header>
+  <nav>
+    <ul>
+      <% if (user) {%>
+      <li><a href="/user/logout">LogOut</a></li>
+      <li><a href="/record">Deep Dig</a></li>
+      <% } else { %>
+      <li><a href="/user/login">Login</a></li>
+      <li><a href="/user/new">Sign Up</a></li>
+      <% } %>
+    </ul>
+  </nav>
+</header>

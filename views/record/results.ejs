@@ -4,6 +4,8 @@
   <% include ../partials/head %>
 </head>
 <body>
+<% include ../partials/header %>
+<% include ../partials/search %>
 <h1>You Are Albuming</h1>
     <%if(albums.length){ %>
     <ol>
@@ -42,6 +44,7 @@
       <% if (album.thumb) { %>
       <li><img src="<%=album.thumb%>"></li>
         <% } %>
+      <li><button class="add" type="submit">Add</a></li>
 
       </ul>
       </li>

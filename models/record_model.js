@@ -35,7 +35,7 @@ showArtist (req, res, next){
   }, (err, response, data)=>{
     if ( err ) throw err
       let albums = data
-    res.results = albums.results
+      res.results = albums.results
     //console.log(res.results)
     //console.log(URL)
     next()

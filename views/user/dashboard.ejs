@@ -4,20 +4,26 @@
   <% include ../partials/head %>
 </head>
 <body>
-<h1>You are Dashboarding</h1>
+<% include ../partials/header %>
+<h1>You are User Dashboarding</h1>
 
 
   <h1>
   <% if(user) { %>
-    Welcome, <%= user.fname %> <%= user.lname %>
-    <p></p>
+    <h2> Welcome, <%= user.fname %> <%= user.lname %> </h2>
 
-    <!-- REMOVED WITH NAV BAR LINK BUT SEE BUTTON PATH ON ROUTE JS
+    <h4>Favorites: <%= user.favorites %></h4>
 
-    <form action="user/logout?_method=DELETE" method="post">
+
+    <!-- REMOVED WITH NAV BAR LINK BUT SEE BUTTON PATH ON ROUTE JS -->
+
+   <!--  <form action="user/logout?_method=DELETE" method="post">
       <input type="submit" value="Log Out">
     </form> -->
-  <% }
+  <% } %>
+
+
+
   </h1>
 
 </body>

@@ -1,0 +1,67 @@
+ul {
+  list-style-type: none;
+}
+
+nav ul {
+  display: block;
+  padding: 1em 0;
+  background-color: black;
+  height: 2em;
+  text-align: right
+}
+
+nav li {
+  display: inline-block;
+   padding: 0 2em;
+   border-left: 1px solid white;
+}
+
+nav li:first-child {
+  border-left: none;
+}
+
+nav li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.2em;
+}
+
+nav li a:hover {
+  color: white;
+}
+
+/*FORMS*/
+
+input[type="email"], input[type="number"], input[type="search"], input[type="text"], input[type="tel"], input[type="url"], input[type="password"], textarea, select {
+height: 2em;
+font-size: 2em;
+}
+
+
+/*https://css-tricks.com/snippets/css/glowing-blue-input-highlights/*/
+input[type=text], textarea {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+}
+
+input[type=text]:focus, textarea:focus {
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+
+  border: 1px solid rgba(81, 203, 238, 1);
+}
+
+
+/*HOME PAGE*/
+
+.home select, .home input {
+  width: 100%;
+}
+
+input:focus {
+  border: 1px solid blue;
+}
+
+

@@ -1,6 +1,6 @@
 const express     = require('express')
 const app         = express()
-const PORT        = process.env.PORT || 2000
+const PORT        = process.env.PORT || 3000
 const logger      = require('morgan')
 const path        = require('path')
 const bodyParser  = require('body-parser')
@@ -10,6 +10,7 @@ const methodOverride = require('method-override')
 const recordRoute = require('./routes/record_route')
 const userRoute   = require('./routes/user_route')
 const homeRoute   = require('./routes/home_route')
+const apiRoute    = require('./routes/api_route')
 
 
 app.use(logger('dev'));
@@ -33,7 +34,8 @@ app.set('view engine', 'ejs')
 //ROUTES
 
 
-app.use('/api', recordRoute)
+app.use('/api', apiRoute)
+app.use('/record', recordRoute)
 app.use('/user', userRoute)
 app.use('/', homeRoute)
 
