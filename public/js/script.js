@@ -5,8 +5,7 @@ $('.search-button').on('click', function() {
   console.log('click')
   let $choice = $('#selectChoice option:selected');
   let $choiceData = $choice.val();
-  let $artistName;
-  let $songTitle;
+
 
     if ($choiceData == 'artist'){
       console.log('artist');
@@ -25,20 +24,21 @@ $('.search-button').on('click', function() {
 
 
 
-        //      $.ajax({
-        //              //we are requesting data from the /movies page to use in our ajax success
-        //              url: './api/'+$choiceData+$searchInput,
-        //              method: 'GET',
-        //              dataType: 'json',
-        //              success: function(data) {
+             // $.ajax({
+             //         //we are requesting data from the /movies page to use in our ajax success
+             //         url: './api/search',
+             //         method: 'GET',
+             //         dataType: 'json',
+             //         data: {type: $choiceData, value:$searchInput},
+             //         success: function(data) {
 
+             //          console.log('woreked')
 
+             //            console.log(data, " AJAX")
 
-        //                 console.log(data)
-
-        //                 } //end success
-        //         }) //end ajax
-        //      $(this).text('Search Again');
+             //            } //end success
+             //    }) //end ajax
+             // $(this).text('Search Again');
         }) //end search button click
 
 

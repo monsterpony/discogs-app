@@ -54,6 +54,21 @@ function loginUser(req, res, next){
   })//end mongoClient connect
 }//end loginUser
 
+function addFavorite (req,res,next){
+  //entire favorites array
+  let email = req.body.email
+  let favorites = req.body.favorites
+  MongoCliennt.connect(dbConnection, function(err,db){
+
+    db.collection('user').findOne({"email": email}, function (err, user){
+      if (err) throw err
+      console.log(user, 'USER')
+    })//end dbcollection
+  })//end mongoClient
+
+  //resp what to do add
+}
+
 
 
 //shorthand for loginUser: loginUser

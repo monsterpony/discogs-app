@@ -8,9 +8,9 @@ const recordModel = require('../models/record_model')
 
 
 recordRouter.get('/search', recordModel.showArtist, (req, res)=>{
-
+  console.log('done')
    //res.render('search/albums', {albums:res.results});
-  res.json(res.results)
+  res.json('search/albums', res.results)
 })
 
 

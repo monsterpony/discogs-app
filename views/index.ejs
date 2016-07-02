@@ -10,13 +10,13 @@
 
 <form action="/api/search" method="get">
 <label for="selectChoice">Choose Your Search</label>
-<select name="searchType" id="selectChoice">
-        <option value="artists">Search Artist</option>
+<select name="type" id="selectChoice">
+        <option value="artist">Search Artist</option>
         <option value="title">Search Title</option>
 </select>
 
 <label for="searchInput">Choose your search</label>
-<input name="searchValue" type="text" placeholder="Enter Artist or Title" id="searchInput">
+<input name="value" type="text" placeholder="Enter Artist or Title" id="searchInput">
 
 <button class="search-button" value='submit'>Search Discogs</button>
 </form>

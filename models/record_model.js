@@ -10,18 +10,24 @@ module.exports = {
 
 showArtist (req, res, next){
 
-  const musicSearch = req.query.searchType
-  const inputValue = req.query.searchValue
-  const URL = 'https://api.discogs.com/database/search'
+  const musicSearch = req.query.type
+  const inputValue = req.query.value
+  const URL = 'https://api.discogs.com/database/search';
 
+  let qs =  {
+      'key': KEY,
+      'secret': SECRET
+    }
+
+   if (musicSearch === 'artist') {
+    qs.artist = inputValue;
+   } else {
+    qs.title = inputValue;
+   }
 
   request.get({
     url: URL,
-    qs: {
-      'q': inputValue,
-      'key': KEY,
-      'secret': SECRET
-    },
+    qs: qs,
     headers: {
       'User-Agent': 'request'
     },
@@ -30,8 +36,8 @@ showArtist (req, res, next){
     if ( err ) throw err
       let albums = data
     res.results = albums.results
-    console.log(res.results)
-    console.log(URL)
+    //console.log(res.results)
+    //console.log(URL)
     next()
   }//end function
 
