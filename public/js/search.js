@@ -1,13 +1,21 @@
 $(document).ready(function() {
     console.log('doin it')
 
-$('.add').on('click', function(){
+$('ul').on('click', '.add', function(){
   console.log('clicked')
 
+  let favArea = $(this).closest('ul')
+  let favTitle = favArea.find('h4').text()
+  let favURL = favArea.find('img').attr('src')
+
+  //console.log(favTitle, 'favTitle')
+  //console.log(favURL, 'favImage')
+
     $.ajax({
-      url: '/user/login',
+      url: '/user/save',
       dataType: 'json',
-      method: 'POST',
+      method: 'GEt',
+      data: {title: favTitle, url: favURL},
       success: function(data){
         console.log(data)
       },
@@ -16,7 +24,7 @@ $('.add').on('click', function(){
       }
 
 
-    })
+    })//end ajax
 
 })//end click
 
@@ -24,4 +32,4 @@ $('.add').on('click', function(){
 
 
 
-  })
+  })//end file

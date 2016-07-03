@@ -199,6 +199,12 @@ input[type="submit"]:hover {
 .search-list li {
   text-align: left;
 }
+
+li.first-word span {
+font-weight: bold;
+text-transform:uppercase;
+}
+
 .image-wrap {
   height: 150px;
   width: auto;
@@ -215,12 +221,20 @@ img.alt-image {
 
 .album-search-return {
     border: 1px solid #ccc;
-    padding: 1em;
     background-color: #edc951;
     margin-bottom: 0;
+    padding: 10px;
 }
 
 .expanded {
   background-color: #023349;
+  padding: 10px;
+}
+
+/*SKELETON GRID*/
+
+.three.columns {
+  width: 25%;
+  margin-left: 0;
 }
 

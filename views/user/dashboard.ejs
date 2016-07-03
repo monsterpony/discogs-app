@@ -5,14 +5,19 @@
 </head>
 <body>
 <% include ../partials/header %>
+<div class="container">
 <h1>You are User Dashboarding</h1>
 
 
-  <h1>
   <% if(user) { %>
     <h2> Welcome, <%= user.fname %> <%= user.lname %> </h2>
 
-    <h4>Favorites: <%= user.favorites %></h4>
+    <h4>Favorites: </h4>
+  <% for(let i =0; i < user.favorites.length; i++){ %>
+      <h6><%= user.favorites[i].title %></h6>
+    <img src="<%= user.favorites[i].url %>">
+    <% } %>
+
 
 
     <!-- REMOVED WITH NAV BAR LINK BUT SEE BUTTON PATH ON ROUTE JS -->
@@ -22,9 +27,8 @@
     </form> -->
   <% } %>
 
+</div><!-- end wrapper -->
 
-
-  </h1>
 
 </body>
 </html>

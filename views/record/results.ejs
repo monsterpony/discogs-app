@@ -13,12 +13,9 @@
 
       <li>
         <ul>
-
-      <li><a href="https://www.discogs.com/artist/<%=album.id%>">LINK TO DISCOGS ID</a></li>
-
       <% if (album.title) { %>
 
-      <li><a href="<%=album.resource_url%>"><%=album.title%></a></li>
+      <li><h4><a href="<%=album.resource_url%>"><%=album.title%></a></h4></li>
       <% } %>
 
       <% if (album.year) { %>

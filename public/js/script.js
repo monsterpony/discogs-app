@@ -19,7 +19,7 @@ $('.search-button').on('click', function(e) {
                      dataType: 'json',
                      data: {type: $choiceData, value: $searchInput},
                      success: function(data) {
-                          console.log(data)
+                         // console.log(data)
 
                             $searchDiv.empty();
                             $inputs.val('');
@@ -33,14 +33,15 @@ $('.search-button').on('click', function(e) {
                                     $searchDiv.addClass('expanded');
                                     data.forEach(function(album) {
 
+                                        let $altImage = $('<img>').attr("src", "/images/discLogo.svg").addClass('alt-image');
                                         let $albumImage = $('<img>').attr("src", album.thumb ).addClass('thumb');
                                         let $imageWrap = $('<div>').addClass('image-wrap');
                                         let $threeCol = $('<div>').addClass('three columns album-cards');
                                         let $ul = $('<ul>').addClass('album-search-return');
-                                        let $liTitle = $('<li>').text('Title: ' + album.title);
-                                        let $liYear = $('<li>').text('Year: ' + album.year);
-                                        let $liFormat = $('<li>').text('Format: ' + album.format.join(', '));
-                                        let $altImage = $('<img>').attr("src", "/images/discLogo.svg").addClass('alt-image');
+                                        let $liTitle = $('<li>').addClass('first-word').text('Title: ' + album.title);
+                                        let $liYear = $('<li>').addClass('first-word').text('Year: ' + album.year);
+                                        let $liFormat = $('<li>').addClass('first-word').text('Format: ' + album.format.join(', '));
+
 
                                        //$liButton.append($favButton);
 
@@ -53,11 +54,13 @@ $('.search-button').on('click', function(e) {
                                         }
 
                                         $ul.append($imageWrap);
+                                        $ul.append($liTitle)
                                         $ul.append($liYear);
                                         $ul.append($liFormat);
                                         //$ul.append($favbutton);
                                         $threeCol.append($ul);
                                         $currRow.append($threeCol);
+
 
                                         //If we are starting a new row, append the last row and set currRow
                                         if ((counter > 0) && counter % 4 === 0) {
@@ -70,6 +73,17 @@ $('.search-button').on('click', function(e) {
                                         $('.search-list').append($currRow);
 
                                     }); //end for each
+                                    //http://ulven.org/how-to-do-a-first-word-pseudo-element-with-jquery/
+                                            $('li.first-word').each(function() {
+                                            var txt = $(this).html();
+                                            var index = txt.indexOf(' ');
+                                            if (index == -1) {
+                                              index = txt.length;
+                                            }
+                                            $(this).html(
+                                                 '<span>' + txt.substring(0, index) + '</span>'
+                                            + txt.substring(index, txt.length));
+                                                });//end first-word
                                   }//end if
 
                         } //end success

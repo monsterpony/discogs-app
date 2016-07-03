@@ -23,6 +23,7 @@ function createUser(req, res, next){
           lname: req.body.lname,
           email: email,
           passwordDigest: hash,
+          favorites: []
         }//userInfo
         db.collection('user').insertOne(userInfo, function (err, result){
             if (err) throw err;
@@ -57,22 +58,24 @@ function loginUser(req, res, next){
   })//end mongoClient connect
 }//end loginUser
 
-// function addFavorite (req,res,next){
-//   //entire favorites array
-//   let email = req.body.email
-//   let favorites = req.body.favorites
-//   MongoCliennt.connect(dbConnection, function(err,db){
+function saveToCollection (req,res,next){
+  //entire favorites array
+  let email = req.session.user.email
+  let title = req.query.title;
+  let url = req.query.url;
 
-//     db.collection('user').update, function (err, user){
-//       if (err) throw err
-//       console.log(user, 'USER')
-//     })//end dbcollection
-//   })//end mongoClient
+  MongoClient.connect(dbConnection, function(err,db){
 
-//   //resp what to do add
-// }
+    db.collection('user').update({"email" : email},{"$addToSet" :{"favorites" : {"title" : title, "url" : url }}},
+    function (err, user){
+      if (err) throw err
+        next()
+
+    })//end dbcollection
+  })//end mongoClient
+}//end save favorite
 
 
 
 //shorthand for loginUser: loginUser
-module.exports = { createUser, loginUser }
+module.exports = { createUser, loginUser, saveToCollection }
