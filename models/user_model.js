@@ -13,7 +13,7 @@ function createSecure(email, password, callback){
 }//end createSecure
 
 function createUser(req, res, next){
-  if(req.body.email && req.body.password && req.body.fname && req.body.lame){
+
      createSecure( req.body.email, req.body.password, saveUser)
     function saveUser(email, hash){
       //fires off whatever is in our req.body
@@ -30,9 +30,7 @@ function createUser(req, res, next){
         })//end collection
       })//end mongoClient
     }//end saveUser
-  } else {
-    console.log('fill out form')
-  }//end elses
+
 
 }//end createUser
 
@@ -50,8 +48,11 @@ function loginUser(req, res, next){
         console.log('cannot find user with email', email);
       } else if(bcrypt.compareSync(password, user.passwordDigest)){
         res.user = user;
+        next();
+      } else if(!bcrypt.compareSync(password, user.passwordDigest)){
+        console.log('womp womp not a password')
       }//end if
-      next();
+
     })//end dbcollection
   })//end mongoClient connect
 }//end loginUser
@@ -62,7 +63,7 @@ function loginUser(req, res, next){
 //   let favorites = req.body.favorites
 //   MongoCliennt.connect(dbConnection, function(err,db){
 
-//     db.collection('user').findOne({"email": email}, function (err, user){
+//     db.collection('user').update, function (err, user){
 //       if (err) throw err
 //       console.log(user, 'USER')
 //     })//end dbcollection

@@ -4,16 +4,19 @@
    <% include ../partials/head %>
 </head>
 <body>
+<% include ../partials/header %>
+    <div class='login form'>
+      <form action="/user/login" method="post">
+        <label for="">Email:</label>
+        <input type="text" name="email" required><br>
+        <label for="">Password</label>
+        <input type="password" name="password" required><br>
+        <input type="submit" value="Login">
+      </form>
+    </div><!-- login -->
 
-<div class='form'>
-  <form action="/user/login" method="post">
-    <label for="">Email:</label>
-    <input type="text" name="email"><br>
-    <label for="">Password</label>
-    <input type="password" name="password"><br>
-    <input type="submit" value="Login">
-  </form>
-</div>
+
+
 
 </body>
 </html>

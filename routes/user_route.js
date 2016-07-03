@@ -3,7 +3,7 @@ const { createUser, loginUser } = require('../models/user_model');
 //short for const createUser = require('../models/user').createUser
 
 userRouter.get('/new', function(req, res){
-  res.render('user/new');
+  res.render('user/new', {user: req.session.user});
 })
 
 userRouter.post('/new', createUser, loginUser, function(req, res){
@@ -12,12 +12,13 @@ userRouter.post('/new', createUser, loginUser, function(req, res){
 
   req.session.save(function(err){
     if(err) throw err
-     res.redirect('/')
+     //res.redirect('/')
+   res.render('user/dashboard', {user: req.session.user})
   })
 })
 
 userRouter.get('/login', function(req, res){
-  res.render('user/login')
+  res.render('user/login', {user: req.session.user})
 })
 
 
@@ -32,21 +33,21 @@ userRouter.post('/login', loginUser, function(req, res){
 })
 
 //FOR BUTTON
-// router.delete('/logout', function(req, res){
-//   //logging out
-//   req.session.destroy(function(err){
-//     //takes you home
-//     res.redirect('/');
-//   });
-// })
-
-userRouter.get('/logout', function(req, res){
+userRouter.delete('/logout', function(req, res){
   //logging out
   req.session.destroy(function(err){
     //takes you home
     res.redirect('/');
   });
 })
+
+// userRouter.get('/logout', function(req, res){
+//   //logging out
+//   req.session.destroy(function(err){
+//     //takes you home
+//     res.redirect('user/goodbye');
+//   });
+// })
 
 module.exports = userRouter;
 

@@ -1,3 +1,31 @@
+/*GLOBAL*/
+
+body {
+  margin: 0;
+}
+
+.container {
+  max-width: 80%;
+}
+
+.top {
+  padding-top:2em;
+}
+
+.bottom {
+  padding-bottom: 2em;
+}
+
+image {
+  max-width: 100%;
+}
+
+nav {
+  position: relative;
+  margin: 0 auto;
+  max-width: 80%;
+}
+
 ul {
   list-style-type: none;
 }
@@ -20,6 +48,10 @@ nav li:first-child {
   border-left: none;
 }
 
+nav li:last-child {
+  padding-right: 0;
+}
+
 nav li a {
   text-decoration: none;
   text-transform: uppercase;
@@ -30,6 +62,49 @@ nav li a:hover {
   color: white;
 }
 
+nav .logo {
+  position: absolute;
+  left: 0;
+  top: .5em;
+  z-index: 5;
+}
+
+nav img {
+  height: 3em;
+  width: 3em;
+  border: 1px solid white;
+  background: white;
+  border-radius: 50%;
+}
+
+nav form.special {
+  margin-bottom: 0;
+  max-height: 2em;
+  width: auto;
+  margin: 0;
+}
+
+nav input.logout {
+  border: none;
+  font-size: 1.2em;
+  color: #ccc;
+  max-height: auto;
+  padding: 0;
+  margin: 0;
+}
+
+nav input[type="submit"] {
+  background-color: transparent;
+}
+
+nav input[type="submit"]:hover {
+  color: white;
+}
+
+header {
+  background-color: #000;
+}
+
 /*FORMS*/
 
 input[type="email"], input[type="number"], input[type="search"], input[type="text"], input[type="tel"], input[type="url"], input[type="password"], textarea, select {
@@ -37,6 +112,13 @@ height: 2em;
 font-size: 2em;
 }
 
+input[type="submit"]:focus {
+  border: none;
+}
+
+input[type="submit"]:hover {
+  color: #fff;
+}
 
 /*https://css-tricks.com/snippets/css/glowing-blue-input-highlights/*/
 input[type=text], textarea {
@@ -54,6 +136,7 @@ input[type=text]:focus, textarea:focus {
 }
 
 
+
 /*HOME PAGE*/
 
 .home select, .home input {
@@ -64,4 +147,80 @@ input:focus {
   border: 1px solid blue;
 }
 
+.home button {
+  margin-bottom: 6em;
+}
+
+.row.results {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 1em;
+}
+
+.album-cards {
+    text-align: center;
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+
+/*LOGIN*/
+
+.form {
+    background-color: rgb(246, 13, 13);
+    padding: 3em 0;
+    color: white;
+    height: 100vh;
+}
+
+form {
+    width: 40%;
+    margin: 5% auto 0 auto;
+}
+
+label {
+  text-align: left;
+}
+
+input[type="text"], input[type="password"] {
+  width: 100%;
+}
+
+input[type="submit"] {
+  background-color: #fff;
+  display: block;
+  margin: 2em auto;
+}
+
+input[type="submit"]:hover {
+  color: black;
+}
+
+/*SEARCH RESULTS*/
+.search-list li {
+  text-align: left;
+}
+.image-wrap {
+  height: 150px;
+  width: auto;
+  border: 1px solid grey;
+  padding: .5em;
+  background: #fff;
+  margin-bottom: 1em;
+}
+
+img.alt-image {
+  max-width: 150px;
+  max-height: auto;
+}
+
+.album-search-return {
+    border: 1px solid #ccc;
+    padding: 1em;
+    background-color: #edc951;
+    margin-bottom: 0;
+}
+
+.expanded {
+  background-color: #023349;
+}
 

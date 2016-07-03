@@ -1,8 +1,12 @@
 <header>
   <nav>
+    <a class="logo" href="/"><img src="/images/discLogo.svg"></a>
     <ul>
       <% if (user) {%>
-      <li><a href="/user/logout">LogOut</a></li>
+      <!-- <li><a href="/user/logout">LogOut</a></li> -->
+      <li><form class="special" action="/user/logout?_method=DELETE" method="post">
+      <input class="logout" type="submit" value="Log Out">
+    </form></li>
       <li><a href="/record">Deep Dig</a></li>
       <% } else { %>
       <li><a href="/user/login">Login</a></li>
@@ -10,4 +14,5 @@
       <% } %>
     </ul>
   </nav>
+
 </header>

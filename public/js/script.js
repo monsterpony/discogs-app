@@ -33,18 +33,26 @@ $('.search-button').on('click', function(e) {
                                     $searchDiv.addClass('expanded');
                                     data.forEach(function(album) {
 
-                                        let $liImage = $('<img>').attr("src", album.thumb )
+                                        let $albumImage = $('<img>').attr("src", album.thumb ).addClass('thumb');
+                                        let $imageWrap = $('<div>').addClass('image-wrap');
                                         let $threeCol = $('<div>').addClass('three columns album-cards');
                                         let $ul = $('<ul>').addClass('album-search-return');
                                         let $liTitle = $('<li>').text('Title: ' + album.title);
                                         let $liYear = $('<li>').text('Year: ' + album.year);
                                         let $liFormat = $('<li>').text('Format: ' + album.format.join(', '));
-                                        //let $liButton = $('<li>');
-                                        //let $favbutton = $('<button>').addClass('add').text('Favorite');
+                                        let $altImage = $('<img>').attr("src", "/images/discLogo.svg").addClass('alt-image');
 
                                        //$liButton.append($favButton);
 
-                                        $ul.append($liImage);
+
+                                        if (album.thumb === "") {
+                                          $imageWrap.append($altImage)
+
+                                        }else {
+                                          $imageWrap.append($albumImage)
+                                        }
+
+                                        $ul.append($imageWrap);
                                         $ul.append($liYear);
                                         $ul.append($liFormat);
                                         //$ul.append($favbutton);
