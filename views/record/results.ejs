@@ -5,53 +5,76 @@
 </head>
 <body>
 <% include ../partials/header %>
-<% include ../partials/search %>
-<h1>You Are Albuming</h1>
+<div class="container">
+  <% include ../partials/search %>
+
+  <div class="row">
+
+
     <%if(albums.length){ %>
-    <ol>
+   <!-- ol -->
+
+   <% let counter = 0 %>
+
       <% albums.forEach( function(album){  %>
 
-      <li>
+      <% if (counter % 3 === 0) { %>
+          </div>
+             <div class="row">
+         <% } %><!-- counter -->
+
+    <div class="four columns dig-inner">
+
+      <!-- <li> -->
         <ul>
-      <% if (album.title) { %>
 
-      <li><h4><a href="<%=album.resource_url%>"><%=album.title%></a></h4></li>
-      <% } %>
+          <% if (album.title) { %>
+            <li><h6><a href="<%=album.resource_url%>"><%=album.title%></a></h6></li>
 
-      <% if (album.year) { %>
-      <li><%=album.year%></li>
-       <% } %>
+          <% } %>
 
-      <% if (album.format) { %>
-      <li><%=album.format%></li>
-      <% } %>
+          <% if (album.thumb === '') { %>
+              <li><img class="alt-image" src="/images/discLogo.svg"></li>
+          <% } else { %>
+              <li><img src="<%=album.thumb%>"></li>
+          <% } %>
 
-     <% if (album.id) { %>
-      <li><%=album.id%></li>
-      <% } %>
+          <% if (album.year) { %>
+            <li><%=album.year%></li>
+           <% } %>
 
-      <% if ((album.style) && (album.style.length !== 0) ){ %>
-      <li><%=album.style%></li>
-       <% } %>
+          <% if (album.format) { %>
+            <li><%= album.format.join(', ') %></li>
+          <% } %>
 
-        <% if (album.community) { %>
-      <li>Want: <%=album['community'].want%>, Have: <%=album['community'].have%></li>
-       <% } %>
+          <% if (album.id) { %>
+            <li><%=album.id%></li>
+          <% } %>
 
-      <% if (album.thumb) { %>
-      <li><img src="<%=album.thumb%>"></li>
-        <% } %>
-      <li><button class="add" type="submit">Add</a></li>
+          <% if ((album.style) && (album.style.length !== 0) ){ %>
+            <li><%=album.style%></li>
+           <% } %>
 
-      </ul>
-      </li>
+          <% if (album.community) { %>
+              <li>Want: <%=album['community'].want%>, Have: <%=album['community'].have%></li>
+          <% } %>
 
-      <% }) %>
-       </ol>
-    <% }else{ %>
-    <ol>
-      <li>No Results found</li>
-      </ol>
-    <% } %>
+          <li><button class="add" type="submit">Save to Favorites</a></li>
+
+        </ul>
+        </div><!-- four columns -->
+      <!-- </li> -->
+    <%  counter++ %>
+      <% }) %> <!-- for each -->
+
+       <!-- ol -->
+
+    <% } else { %>
+
+      <h2>No Results found</h2>
+
+      <% } %> <!-- length else -->
+      </div><!--  end row -->
+    </div><!-- end container -->
 </body>
 </html>

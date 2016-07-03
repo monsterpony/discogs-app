@@ -11,7 +11,7 @@ module.exports = {
 showArtist (req, res, next){
 
   const musicSearch = req.query.type
-  const inputValue = req.query.value
+  const inputValue = req.query.value//new RegExp( '^' + req.query.value, 'i')
   const URL = 'https://api.discogs.com/database/search';
 
   let qs =  {

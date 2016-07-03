@@ -20,6 +20,10 @@ userRouter.get('/login', function(req, res){
   res.render('user/login', {user: req.session.user})
 })
 
+userRouter.get('/dashboard', function(req, res){
+  res.render('user/dashboard', {user: req.session.user})
+})
+
 
 userRouter.post('/login', loginUser, function(req, res){
   req.session.user = res.user;

@@ -1,13 +1,21 @@
+<div class="dig-deep">
 <form action="/api/dig" method="get">
-  <label for="selectChoice">Choose Your Search</label>
-  <select name="type" id="selectChoice">
-          <option value="artist">Search Artist</option>
-          <option value="title">Search Title</option>
-  </select>
+  <div class="row">
+        <div class="four columns">
+          <select name="type" id="selectChoice">
+                  <option value="artist">Search Artist</option>
+                  <option value="title">Search Title</option>
+           </select>
+        </div><!-- four -->
+       <div class="eight columns">
+          <input name="value" type="text" placeholder="Enter Artist or Title" id="searchInput">
+      </div><!-- eight -->
+  </div><!-- row -->
+  <div class="row">
+    <div class="columns twelve">
+      <button class value='submit'>Search</button>
+    </div><!-- twelve -->
+  </div><!-- row -->
 
-  <label for="searchInput">Choose your search</label>
-  <input name="value" type="text" placeholder="Enter Artist or Title" id="searchInput">
-
-  <button class value='submit'>Deep Dig</button>
-  </div>
 </form>
+</div><!-- dig-deep -->

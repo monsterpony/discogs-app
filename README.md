@@ -50,3 +50,9 @@ Authentication is required, and the user needs to have filled out their seller s
 * User stories reflect in views...what besides the login/logout option changes based on user?
 
 ![wireframe](/public/images/wireframe_quick.jpg)
+
+
+
+##STUFF
+
+http://mherman.org/blog/2014/04/15/handling-ajax-calls-with-node-dot-js-and-express-part-5/#.V3iPTJMrJE5

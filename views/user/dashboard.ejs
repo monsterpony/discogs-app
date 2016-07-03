@@ -5,12 +5,11 @@
 </head>
 <body>
 <% include ../partials/header %>
-<div class="container">
-<h1>You are User Dashboarding</h1>
+<div class="container dashboard">
 
 
   <% if(user) { %>
-    <h2> Welcome, <%= user.fname %> <%= user.lname %> </h2>
+    <h1> Welcome, <%= user.fname %> <%= user.lname %> </h1>
 
     <h4>Favorites: </h4>
   <% for(let i =0; i < user.favorites.length; i++){ %>

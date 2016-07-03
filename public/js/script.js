@@ -1,15 +1,21 @@
 $(document).ready(function() {
     console.log('roll\'n')
 
+    var currentLocation = window.location;
+    console.log(currentLocation.href)
+
 $('.search-button').on('click', function(e) {
   e.preventDefault()
   console.log('click')
+  let errorList = ['Contrary to popular belief, I am not physic', 'It\'s hard to search an empty box...just sayin...', 'I feel so empty']
   let $choice = $('#selectChoice option:selected');
   let $choiceData = $choice.val();
   let $searchInput = $('#searchInput').val()
 
   const $searchDiv = $('div.search-list');
-  const $inputs = $('input');
+  const $inputs = $('#searchInput');
+  if( $searchInput){
+              $('.alert').fadeOut('hide');
 
              $.ajax({
 
@@ -67,14 +73,13 @@ $('.search-button').on('click', function(e) {
                                             $('.search-list').append($currRow);
                                             $currRow = $('<div>').attr('class', 'row results');
 
+
+
                                         } //end if
 
                                         counter++;
                                         $('.search-list').append($currRow);
-
-                                    }); //end for each
-                                    //http://ulven.org/how-to-do-a-first-word-pseudo-element-with-jquery/
-                                            $('li.first-word').each(function() {
+                                         $('li.first-word').each(function() {
                                             var txt = $(this).html();
                                             var index = txt.indexOf(' ');
                                             if (index == -1) {
@@ -84,11 +89,17 @@ $('.search-button').on('click', function(e) {
                                                  '<span>' + txt.substring(0, index) + '</span>'
                                             + txt.substring(index, txt.length));
                                                 });//end first-word
+
+                                    }); //end for each
+                                    //http://ulven.org/how-to-do-a-first-word-pseudo-element-with-jquery/
+
                                   }//end if
 
                         } //end success
                 }) //end ajax
-             $(this).text('Search Again');
+  } else {
+    $('.alert').toggleClass('hide');
+  }// searchinput if/else empthy
          }) //end search button click
 
 

@@ -88,7 +88,6 @@ nav input.logout {
   border: none;
   font-size: 1.2em;
   color: #ccc;
-  max-height: auto;
   padding: 0;
   margin: 0;
 }
@@ -106,6 +105,18 @@ header {
 }
 
 /*FORMS*/
+
+.hide {
+  display: none;
+}
+
+.error {
+  color: #000;
+  background-color: yellow;
+  height: 2em;
+  text-align: center;
+  font-size: 2em;
+}
 
 input[type="email"], input[type="number"], input[type="search"], input[type="text"], input[type="tel"], input[type="url"], input[type="password"], textarea, select {
 height: 2em;
@@ -139,7 +150,7 @@ input[type=text]:focus, textarea:focus {
 
 /*HOME PAGE*/
 
-.home select, .home input {
+ .home select, .home input, .dig-deep select {
   width: 100%;
 }
 
@@ -165,14 +176,14 @@ input:focus {
 
 /*LOGIN*/
 
-.form {
+.user .form {
     background-color: rgb(246, 13, 13);
     padding: 3em 0;
     color: white;
     height: 100vh;
 }
 
-form {
+.user form {
     width: 40%;
     margin: 5% auto 0 auto;
 }
@@ -230,6 +241,14 @@ img.alt-image {
   background-color: #023349;
   padding: 10px;
 }
+
+/*USER*/
+
+ .dashboard h1 {
+  text-transform: capitalize;
+ }
+
+
 
 /*SKELETON GRID*/
 

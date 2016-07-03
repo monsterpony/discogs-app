@@ -25,7 +25,7 @@ $('ul').on('click', '.add', function(){
 
 
     })//end ajax
-
+$(this).text('Done & Dusted')
 })//end click
 
 
