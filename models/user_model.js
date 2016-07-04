@@ -1,7 +1,7 @@
 const {
     MongoClient
 } = require('mongodb');
-const dbConnection = 'mongodb://localhost:27017/users';
+const dbConnection = process.env['MONGODB_URI'] || 'mongodb://localhost:27017/users';
 const bcrypt = require('bcrypt');
 const salt = bcrypt.genSalt(10);
 //callback - as soon as createSecure creates secure passwork, fire the callback function (saveUser)
