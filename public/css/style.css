@@ -9,7 +9,7 @@ body {
 }
 
 .top {
-  padding-top:3em;
+  padding-top: 3em;
 }
 
 .bottom {
@@ -40,8 +40,8 @@ nav ul {
 
 nav li {
   display: inline-block;
-   padding: 0 2em;
-   border-left: 1px solid white;
+  padding: 0 2em;
+  border-left: 1px solid white;
 }
 
 nav li:first-child {
@@ -106,8 +106,9 @@ nav input[type="submit"]:hover {
 
 header {
   background-color: #000;
-  height:  4.5em;
+  height: 4.5em;
 }
+
 
 /*FORMS*/
 
@@ -117,7 +118,6 @@ header {
 
 p.first {
   margin-bottom: 0;
-
 }
 
 .hide {
@@ -132,9 +132,17 @@ p.first {
   font-size: 2em;
 }
 
-input[type="email"], input[type="number"], input[type="search"], input[type="text"], input[type="tel"], input[type="url"], input[type="password"], textarea, select {
-height: 2em;
-font-size: 1.5em;
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea,
+select {
+  height: 2em;
+  font-size: 1.5em;
 }
 
 input[type="submit"]:focus {
@@ -145,8 +153,11 @@ input[type="submit"]:hover {
   color: #fff;
 }
 
+
 /*https://css-tricks.com/snippets/css/glowing-blue-input-highlights/*/
-input[type=text], textarea {
+
+input[type=text],
+textarea {
   -webkit-transition: all 0.30s ease-in-out;
   -moz-transition: all 0.30s ease-in-out;
   -ms-transition: all 0.30s ease-in-out;
@@ -154,28 +165,28 @@ input[type=text], textarea {
   outline: none;
 }
 
-input[type=text]:focus, textarea:focus {
+input[type=text]:focus,
+textarea:focus {
   box-shadow: 0 0 5px rgba(81, 203, 238, 1);
-
   border: 1px solid rgba(81, 203, 238, 1);
 }
-
 
 
 /*HOME PAGE*/
 
 .bg {
   /*background-image: url('/images/bg.jpg');*/
-  background-size:cover;
+  background-size: cover;
   background-color: black;
 }
 
 body.home {
-
-background: #232526; /* fallback for old browsers */
-background: -webkit-linear-gradient(to left, #232526 , #414345); /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to left, #232526 , #414345); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  background: #232526;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #232526, #414345);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #232526, #414345);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .overlay {
@@ -189,11 +200,12 @@ background: linear-gradient(to left, #232526 , #414345); /* W3C, IE 10+/ Edge, F
 
 .overlay h1 {
   text-align: center;
-  padding-top:1em;
+  padding-top: 1em;
 }
 
-
- .home select, .home input, .dig-deep select {
+.home select,
+.home input,
+.dig-deep select {
   width: 100%;
 }
 
@@ -210,40 +222,39 @@ input:focus {
   color: #fff;
 }
 
-
 .row.results {
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 1em;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 1em;
 }
 
 .album-cards {
-    text-align: center;
-    padding: 1em;
-    margin-bottom: 1em;
+  text-align: center;
+  padding: 1em;
+  margin-bottom: 1em;
 }
 
 
 /*LOGIN*/
 
-.form{
-    background-color: rgb(246, 13, 13);
-    padding: 3em 0;
-    color: white;
-    height: 100vh;
-
-
-background: #000000; /* fallback for old browsers */
-background: -webkit-linear-gradient(to top, #000000 , #434343); /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to top, #000000 , #434343); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
+.form {
+  background-color: rgb(246, 13, 13);
+  padding: 3em 0;
+  color: white;
+  height: 100vh;
+  background: #000000;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #000000, #434343);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #000000, #434343);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 label {
   text-align: left;
 }
 
-input[type="text"], input[type="password"] {
+input[type="text"],
+input[type="password"] {
   width: 100%;
 }
 
@@ -258,18 +269,20 @@ input[type="submit"]:hover {
   color: #ccc;
 }
 
+
 /*SEARCH RESULTS*/
+
 .search-list li {
   text-align: left;
   color: #efefef;
-      border-bottom: 1px solid grey;
-    margin-bottom: 1rem;
-    font-size: .9em;
+  border-bottom: 1px solid grey;
+  margin-bottom: 1rem;
+  font-size: .9em;
 }
 
 li.first-word span {
-font-weight: bold;
-text-transform:uppercase;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .image-wrap {
@@ -287,100 +300,104 @@ img.alt-image {
 }
 
 .album-search-return {
-    border: 1px solid #ccc;
-    background-color: rgba(209, 213, 214, 0.2);
-    margin-bottom: 0;
-    padding: 10px;
+  border: 1px solid #ccc;
+  background-color: rgba(209, 213, 214, 0.2);
+  margin-bottom: 0;
+  padding: 10px;
 }
 
 .expanded {
   padding: 10px;
 }
 
+
 /*USER*/
 
- .dashboard h1, .user-fname {
+.dashboard h1,
+.user-fname {
   text-transform: capitalize;
- }
+}
 
-
-
- .fav-wrap {
+.fav-wrap {
   text-align: center;
   padding: 1em;
   position: relative;
- }
+}
 
- .fav-wrap img:hover {
+.fav-wrap img:hover {
   opacity: .5;
- }
+}
 
- .favorites {
+.favorites {
   background-color: #efefef;
   border-bottom: 2px solid #ccc;
- }
+}
 
- .remove {
+.remove {
   display: block;
   margin: 0 auto;
   background-color: #1EAEDB;
   color: #fff;
- }
+}
 
- /*RESULTS*/
- .dig-inner {
+
+/*RESULTS*/
+
+.dig-inner {
   border: 1px solid #000;
   padding: 1em;
- }
+}
 
- .result-wrap {
+.result-wrap {
   text-align: center;
   border-right: 1px solid #000;
- }
+}
 
- .result-wrap button {
+.result-wrap button {
   background-color: #1EAEDB;
   color: #fff;
   margin-bottom: 2em;
- }
+}
 
- .result-wrap button:disabled {
+.result-wrap button:disabled {
   background-color: #ccc;
-  border:none;
+  border: none;
   cursor: default;
   color: #555;
 }
 
- .color {
+.color {
   height: 2em;
   width: 2em;
   display: inline-block;
- }
+}
 
- .one {
+.one {
   background-color: red;
   color: white;
- }
+}
 
- .two {
+.two {
   background-color: grey;
- }
+}
 
- .color.three {
+.color.three {
   background-color: black;
- }
+}
 
- .color-select {
+.color-select {
   border: 1px solid #000;
   opacity: .5;
- }
+}
+
 
 /* MODAL*/
+
 .outer-modal {
   position: relative;
   height: 100vh;
   width: 100vw;
-  background-color: rgba(0,0,0, .5);
+  background-color: rgba(0, 0, 0, .5);
   z-index: 1;
 }
 
@@ -404,6 +421,7 @@ button.leave-modal {
   bottom: 0;
 }
 
+
 /*VIDEO*/
 
 video.fullscreen {
@@ -417,6 +435,8 @@ video.fullscreen {
   z-index: -100;
   transform: translate(-50%, -50%);
 }
+
+
 /*SKELETON GRID*/
 
 .three.columns {
@@ -424,68 +444,60 @@ video.fullscreen {
   margin-left: 0;
 }
 
+
 /*QUERIES*/
+
 
 /* Mobile first queries */
 
+
 /* Larger than mobile */
+
 @media (min-width: 400px) {
- .three.columns {
+  .three.columns {
     width: 100%;
   }
-
   .result-wrap {
     width: 100%;
     border-right: 0;
     border-bottom: 1px solid #000;
     margin-bottom: 1em;
   }
-
   .result-wrap img {
     display: block;
-   margin: 0 auto;
+    margin: 0 auto;
   }
-
-
   .dig-inner {
     margin-bottom: 2em;
     background-color: #fff;
   }
-
   .bottom {
     padding-bottom: 1em;
   }
-
- body.results {
+  body.results {
     background-color: #efefef;
   }
-
   .dig-deep button {
     background-color: red;
     color: #fff;
   }
-
-nav li {
-  padding: 0 1em;
-}
+  nav li {
+    padding: 0 1em;
+  }
   nav li a {
     font-size: .8em;
   }
-
   .fav-wrap {
     border-bottom: 2px solid #ccc;
   }
-
   .inner-modal {
     border-radius: 2px;
   }
-
   .inner-modal h3 {
     font-size: 1.3em;
     padding: 1em 2em 1em 1em;
     margin-bottom: 1em;
   }
-
   button.leave-modal {
     position: absolute;
     right: 1em;
@@ -493,100 +505,93 @@ nav li {
     padding: 0 1em;
     background-color: red;
     color: #fff;
-}
-
-.user form {
+  }
+  .user form {
     width: 80%;
     margin: 5% auto 0 auto;
+  }
+  .overlay h1 {
+    padding-top: 0;
+  }
+  .home h4 {
+    color: #ccc;
+    font-size: 1.2em;
+  }
 }
 
-.overlay h1 {
-  padding-top: 0;
-}
 
-.home h4 {
-  color: #ccc;
-  font-size: 1.2em;
-}
+/*end mobile*/
 
-}/*end mobile*/
-
-@media (min-width: 550px){
+@media (min-width: 550px) {
   nav li {
-  padding: 0 2em;
-}
+    padding: 0 2em;
+  }
   nav li a {
     font-size: 1em;
   }
-
-  div.six div.six.columns{
+  div.six div.six.columns {
     width: 100%;
   }
-
-
+  .home h4 {
+    padding: 2em 0;
+    color: #fff;
+    font-size: 1.5em;
+  }
 }
 
+
+/*min-width 550*/
+
+
 /* Larger than phablet */
+
 @media (max-width: 550px) {
   .four.columns {
     width: 100%;
   }
-
   .bg-small {
-  background-image: url('/images/bg.jpg');
-  background-repeat:no-repeat;
-background-size:cover;
-background-position:center;
+    background-image: url('/images/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
   }
-
   video {
-    display:none;
+    display: none;
   }
-
-
-
-
-}/*phone tablet*/
-
-@media (min-width: 550px){
-
-  .home h4 {
-    padding: 2em 0;
-    color: #fff;
-    font-size: 2em;
-  }
-
 }
 
 
+/*phone tablet*/
 
-
-
-@media (min-width: 790px){
-    .three.columns {
+@media (min-width: 790px) {
+  .three.columns {
     width: 50%;
   }
-
- .fav-wrap {
+  .fav-wrap {
     border-bottom: 0;
   }
-
   .user form {
     width: 60%;
+  }
 }
 
-}
 
 /* Larger than tablet */
+
 @media (min-width: 791px) {
-
-
-
+  .home h4 {
+    font-size: 2em;
+  }
+  .overlay h1 {
+    margin-top: 1em;
+  }
 }
 
+
 /* Larger than desktop */
+
 @media (min-width: 1000px) {
-div.six div.six.columns{
+  div.six div.six.columns {
     width: 48%;
   }
   .result-wrap {
@@ -594,38 +599,31 @@ div.six div.six.columns{
     border-right: 1px solid #000;
     border-bottom: 0;
   }
-
   button.add {
     max-width: 100%;
     padding: 0 1em;
   }
-
-    .inner-modal h3 {
+  .inner-modal h3 {
     font-size: 2em;
     padding: 1em;
   }
-
   button.leave-modal {
     padding: 0 2em;
-}
-
-.user form {
+  }
+  .user form {
     width: 40%;
+  }
+  .home h4 {
+    padding: 3em 0;
+    color: #fff;
+  }
 }
 
- .home h4 {
-  padding: 3em 0;
-  color: #fff;
-}
-
-
-}
 
 /* Larger than Desktop HD */
+
 @media (min-width: 1200px) {
-.three.columns {
-  width: 25%;
+  .three.columns {
+    width: 25%;
+  }
 }
-
-}
-
