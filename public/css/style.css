@@ -331,7 +331,8 @@ img.alt-image {
  .remove {
   display: block;
   margin: 0 auto;
-  background-color: #fff;
+  background-color: #1EAEDB;
+  color: #fff;
  }
 
  /*RESULTS*/
@@ -441,6 +442,82 @@ video.fullscreen {
     width: 100%;
   }
 
+  .result-wrap {
+    width: 100%;
+    border-right: 0;
+    border-bottom: 1px solid #000;
+    margin-bottom: 1em;
+  }
+
+  .result-wrap img {
+    display: block;
+   margin: 0 auto;
+  }
+
+
+  .dig-inner {
+    margin-bottom: 2em;
+    background-color: #fff;
+  }
+
+  .bottom {
+    padding-bottom: 1em;
+  }
+
+ body.results {
+    background-color: #efefef;
+  }
+
+  .dig-deep button {
+    background-color: red;
+    color: #fff;
+  }
+
+nav li {
+  padding: 0 1em;
+}
+  nav li a {
+    font-size: .8em;
+  }
+
+  .fav-wrap {
+    border-bottom: 2px solid #ccc;
+  }
+
+  .inner-modal {
+    border-radius: 2px;
+  }
+
+  .inner-modal h3 {
+    font-size: 1.3em;
+    padding: 1em 2em 1em 1em;
+    margin-bottom: 1em;
+  }
+
+  button.leave-modal {
+    position: absolute;
+    right: 1em;
+    bottom: 0;
+    padding: 0 1em;
+    background-color: red;
+    color: #fff;
+}
+
+}/*end mobile*/
+
+@media (min-width: 550px){
+  nav li {
+  padding: 0 2em;
+}
+  nav li a {
+    font-size: 1em;
+  }
+
+  div.six div.six.columns{
+    width: 100%;
+  }
+
+
 }
 
 /* Larger than phablet */
@@ -449,12 +526,26 @@ video.fullscreen {
     width: 100%;
   }
 
+  .bg-small {
+  background-image: url('/images/bg.jpg');
+  background-repeat:no-repeat;
+background-size:cover;
+background-position:center;
+  }
+
+  video {
+    display:none;
+  }
 
 }
 
 @media (min-width: 790px){
     .three.columns {
     width: 50%;
+  }
+
+ .fav-wrap {
+    border-bottom: 0;
   }
 
 }
@@ -470,6 +561,28 @@ video.fullscreen {
 
 /* Larger than desktop */
 @media (min-width: 1000px) {
+div.six div.six.columns{
+    width: 48%;
+  }
+  .result-wrap {
+    padding: 1em;
+    border-right: 1px solid #000;
+    border-bottom: 0;
+  }
+
+  button.add {
+    max-width: 100%;
+    padding: 0 1em;
+  }
+
+    .inner-modal h3 {
+    font-size: 2em;
+    padding: 1em;
+  }
+
+  button.leave-modal {
+    padding: 0 2em;
+}
 
 
 }
