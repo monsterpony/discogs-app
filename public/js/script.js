@@ -81,7 +81,7 @@ $(document).ready(function() {
                     //If we are starting a new row, append the last row and set currRow
                     if ((counter > 0) && counter % 4 === 0) {
                       $('.search-list').append($currRow);
-                      $currRow = $('<div>').attr('class', 'row results');
+                      $currRow = $('<div>').attr('class', 'row results flex-row');
 
 
 

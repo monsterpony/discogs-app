@@ -235,22 +235,29 @@ input:focus {
   text-align: center;
   padding: 1em;
   margin-bottom: 1em;
+  border: 1px solid #ccc;
+  background-color: rgba(209, 213, 214, 0.4);
 }
 
 
 /*LOGIN*/
 
-.form {
-  background-color: rgb(246, 13, 13);
-  padding: 3em 0;
-  color: white;
-  height: 100vh;
+body.user-form {
+
   background: #000000;
   /* fallback for old browsers */
   background: -webkit-linear-gradient(to top, #000000, #434343);
   /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to top, #000000, #434343);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.form {
+
+  padding: 3em 0;
+  color: white;
+  height: 60vh;
+  margin: 0 auto;
 }
 
 label {
@@ -304,8 +311,7 @@ img.alt-image {
 }
 
 .album-search-return {
-  border: 1px solid #ccc;
-  background-color: rgba(209, 213, 214, 0.2);
+
   margin-bottom: 0;
   padding: 10px;
 }
@@ -320,6 +326,7 @@ img.alt-image {
 .dashboard h1,
 .user-fname {
   text-transform: capitalize;
+  margin-top: 1em;
 }
 
 .fav-wrap {
@@ -449,6 +456,7 @@ video.fullscreen {
 
 footer {
   background-color: #333;
+  margin-top: 5em;
 }
 
 footer li {
@@ -467,7 +475,7 @@ footer li {
   text-align: right;
 }
 
-p.footer {
+p.footer, p.footer-alt {
   font-size: .8em;
   color: #777;
   margin-bottom: 0;
@@ -535,7 +543,27 @@ footer a:hover {
 /* Mobile first queries */
 
 
-/* Larger than mobile */
+@media (min-width: 400px) {
+
+ footer, footer ul {
+  text-align: center;
+ }
+
+p.footer{
+  display:none;
+}
+
+p.footer-alt {
+  display: block;
+  text-align: center;
+}
+
+ul.social {
+  margin-bottom: 0;
+  padding-top: .5em;
+}
+
+}
 
 @media (min-width: 400px) {
   .three.columns {
@@ -621,6 +649,24 @@ footer a:hover {
     color: #fff;
     font-size: 1.5em;
   }
+
+
+p.footer{
+  display:block;
+}
+
+p.footer-alt {
+  display: none;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
 }
 
 
