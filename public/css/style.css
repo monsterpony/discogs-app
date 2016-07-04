@@ -118,6 +118,14 @@ header {
   font-size: 2em;
 }
 
+button:disabled {
+  background-color: #ccc;
+  border:none;
+  cursor: default;
+  color: #555;
+}
+
+
 input[type="email"], input[type="number"], input[type="search"], input[type="text"], input[type="tel"], input[type="url"], input[type="password"], textarea, select {
 height: 2em;
 font-size: 2em;
@@ -176,7 +184,7 @@ input:focus {
 
 /*LOGIN*/
 
-.user .form {
+.form{
     background-color: rgb(246, 13, 13);
     padding: 3em 0;
     color: white;
@@ -244,8 +252,34 @@ img.alt-image {
 
 /*USER*/
 
- .dashboard h1 {
+ .dashboard h1, .user-fname {
   text-transform: capitalize;
+ }
+
+ .fav-wrap {
+  background-color: #000;
+  text-align: center;
+  padding: 1em;
+  position: relative;
+ }
+
+ .fav-wrap img:hover {
+  opacity: .5;
+ }
+
+ .user-title {
+  color: #fff;
+ }
+
+ .favorites {
+  background-color: black;
+  border-bottom: 2px solid #ccc;
+ }
+
+ .remove {
+  display: block;
+  margin: 0 auto;
+  background-color: #fff;
  }
 
 

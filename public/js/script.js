@@ -1,13 +1,11 @@
 $(document).ready(function() {
     console.log('roll\'n')
 
-    var currentLocation = window.location;
-    console.log(currentLocation.href)
 
 $('.search-button').on('click', function(e) {
   e.preventDefault()
   console.log('click')
-  let errorList = ['Contrary to popular belief, I am not physic', 'It\'s hard to search an empty box...just sayin...', 'I feel so empty']
+
   let $choice = $('#selectChoice option:selected');
   let $choiceData = $choice.val();
   let $searchInput = $('#searchInput').val()

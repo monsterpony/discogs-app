@@ -1,5 +1,5 @@
 const userRouter = require('express').Router();
-const { createUser, loginUser, saveToCollection } = require('../models/user_model');
+const { createUser, loginUser, saveToCollection, removeFromCollection } = require('../models/user_model');
 //short for const createUser = require('../models/user').createUser
 
 userRouter.get('/new', function(req, res){
@@ -21,6 +21,7 @@ userRouter.get('/login', function(req, res){
 })
 
 userRouter.get('/dashboard', function(req, res){
+
   res.render('user/dashboard', {user: req.session.user})
 })
 
@@ -39,15 +40,30 @@ userRouter.delete('/logout', function(req, res){
   //logging out
   req.session.destroy(function(err){
     //takes you home
-    res.redirect('/');
+    res.render('user/goodbye');
   });
 })
 
 userRouter.get('/save', saveToCollection, function(req,res){
-  //  var title = req.query.title;
-  // var url = req.query.url;
-  // console.log(title, url);
+
+ res.redirect('/');
+// req.session.user = res.user;
+
+//   req.session.reload(function(err){
+//     if(err) throw err
+//      res.redirect('/')
+//   })
+})
+
+userRouter.get('/remove', removeFromCollection, function(req,res){
+
   res.redirect('/');
+  // req.session.user = res.user;
+
+  // req.session.reload(function(err){
+  //   if(err) throw err
+  //    res.redirect('/')
+  // })
 })
 
 

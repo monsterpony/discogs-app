@@ -66,9 +66,28 @@ function saveToCollection (req,res,next){
 
   MongoClient.connect(dbConnection, function(err,db){
 
-    db.collection('user').update({"email" : email},{"$addToSet" :{"favorites" : {"title" : title, "url" : url }}},
+    db.collection('user').update({email : email},{$addToSet :{favorites : {title : title, url : url }}},
     function (err, user){
       if (err) throw err
+        res.user = user;
+        next()
+
+    })//end dbcollection
+  })//end mongoClient
+}//end save favorite
+
+function removeFromCollection (req,res,next){
+  //entire favorites array
+  let email = req.session.user.email
+  let title = req.query.title;
+  let url = req.query.url;
+
+  MongoClient.connect(dbConnection, function(err,db){
+
+    db.collection('user').update({email : email},{$pull :{favorites : {title : title, url : url }}},
+    function (err, user){
+      if (err) throw err
+        res.user = user;
         next()
 
     })//end dbcollection
@@ -78,4 +97,4 @@ function saveToCollection (req,res,next){
 
 
 //shorthand for loginUser: loginUser
-module.exports = { createUser, loginUser, saveToCollection }
+module.exports = { createUser, loginUser, saveToCollection, removeFromCollection }
