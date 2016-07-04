@@ -42,7 +42,7 @@ $(document).ready(function() {
 
 
                 let counter = 1;
-                let $currRow = $('<div>').attr('class', 'row results');
+                let $currRow = $('<div>').attr('class', 'row results flex-row');
 
 
                 if ($searchInput) {
@@ -52,7 +52,7 @@ $(document).ready(function() {
                     let $altImage = $('<img>').attr("src", "/images/discLogo.svg").addClass('alt-image');
                     let $albumImage = $('<img>').attr("src", album.thumb).addClass('thumb');
                     let $imageWrap = $('<div>').addClass('image-wrap');
-                    let $threeCol = $('<div>').addClass('three columns album-cards');
+                    let $threeCol = $('<div>').addClass('three columns album-cards flex-group');
                     let $ul = $('<ul>').addClass('album-search-return');
                     let $liTitle = $('<li>').addClass('first-word').text(album.title);
                     let $liYear = $('<li>').addClass('first-word').text(album.year);

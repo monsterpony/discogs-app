@@ -4,6 +4,10 @@ body {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 .container {
   max-width: 80%;
 }
@@ -436,12 +440,92 @@ video.fullscreen {
   transform: translate(-50%, -50%);
 }
 
+/*FOOTER*/
+.footer-image {
+  width: 3em;
+  height: 3em;
+  opacity: .5;
+}
+
+footer {
+  background-color: #333;
+}
+
+footer li {
+  margin-bottom: 1rem;
+  display: inline-block;
+  padding: 0 .5em;
+  font-size: 2em;
+  color: #999
+}
+
+.footer {
+  padding-top: 1em;
+}
+
+.right {
+  text-align: right;
+}
+
+p.footer {
+  font-size: .8em;
+  color: #777;
+  margin-bottom: 0;
+}
+
+footer a:hover {
+  color: #ccc;
+}
+
+/*ICON FONTS*/
+.icon-facebook3:before {
+    content: "\e900";
+}
+
+.icon-twitter3:before {
+    content: "\e901";
+}
+
+.icon-github:before {
+    content: "\e902";
+}
+
+
 
 /*SKELETON GRID*/
 
 .three.columns {
   width: 25%;
   margin-left: 0;
+}
+
+/*FLEX BOXES*/
+
+.flex-row {
+    display: -webkit-flex;
+    display: flex;
+    min-height: 0;
+    min-width: 0;
+}
+
+.flex-group {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex: 1 20%;
+    flex: 1 20%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    padding: 0 0 1em 0;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    min-height: 0;
+    min-width: 0;
 }
 
 
@@ -627,3 +711,7 @@ video.fullscreen {
     width: 25%;
   }
 }
+
+
+
+
