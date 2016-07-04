@@ -66,10 +66,12 @@ function saveToCollection (req,res,next){
 
   MongoClient.connect(dbConnection, function(err,db){
 
-    db.collection('user').update({email : email},{$addToSet :{favorites : {title : title, url : url }}},
+    db.collection('user').update(
+      {email : email},
+      {$addToSet :{favorites : {title : title, url : url }}},
     function (err, user){
       if (err) throw err
-        res.user = user;
+      res.user = user
         next()
 
     })//end dbcollection
@@ -84,7 +86,9 @@ function removeFromCollection (req,res,next){
 
   MongoClient.connect(dbConnection, function(err,db){
 
-    db.collection('user').update({email : email},{$pull :{favorites : {title : title, url : url }}},
+    db.collection('user').update(
+      {email : email},
+      {$pull :{favorites : {title : title, url : url }}},
     function (err, user){
       if (err) throw err
         res.user = user;
@@ -96,5 +100,29 @@ function removeFromCollection (req,res,next){
 
 
 
+function getCollection(req,res,next) {
+   if (req.session && req.session.user) {
+
+   MongoClient.connect(dbConnection, function(err,db){
+     if(err) throw err;
+
+     db.collection('user')
+       .findOne({ email: req.session.user.email }, function(err, user) {
+         if (user) {
+           req.user = user;
+           delete req.user.password; // delete the password from the session
+           req.session.user = user;  //refresh the session value
+           res.locals.user = user;
+           // finishing processing the middleware and run the route
+           next();
+         } else {
+           next();
+         }
+     })
+   })
+ }
+}
+
+
 //shorthand for loginUser: loginUser
-module.exports = { createUser, loginUser, saveToCollection, removeFromCollection }
+module.exports = { createUser, loginUser, getCollection, saveToCollection, removeFromCollection }

@@ -8,66 +8,78 @@
 <div class="container">
   <% include ../partials/search %>
 
-  <div class="row">
+  <div class="row bottom">
 
 
     <%if(albums.length){ %>
-   <!-- ol -->
+
 
    <% let counter = 0 %>
 
       <% albums.forEach( function(album){  %>
 
-      <% if (counter % 3 === 0) { %>
+      <% if (counter % 2 === 0) { %>
           </div>
-             <div class="row">
+             <div class="row bottom">
          <% } %><!-- counter -->
 
-    <div class="four columns dig-inner">
+    <div class="six columns dig-inner">
+    <!-- <div class="row"> -->
+    <div class="columns six result-wrap">
 
-      <!-- <li> -->
-        <ul>
+     <% if (album.thumb === '') { %>
+              <img class="alt-image bottom" src="/images/discLogo.svg">
+          <% } else { %>
+              <img class="bottom" src="<%=album.thumb%>">
+          <% } %>
+    <button class="add" type="submit">Save to Favorites</a>
+
+
+    </div><!-- inner six -->
+
+
+    <div class="columns six">
+
+    <ul>
 
           <% if (album.title) { %>
-            <li><h6 class='title'><a href="<%=album.resource_url%>"><%=album.title%></a></h6></li>
-
-          <% } %>
-
-          <% if (album.thumb === '') { %>
-              <li><img class="alt-image" src="/images/discLogo.svg"></li>
-          <% } else { %>
-              <li><img src="<%=album.thumb%>"></li>
+            <li><h6 class='first'><%=album.title%></h6></li>
           <% } %>
 
           <% if (album.year) { %>
-            <li><%=album.year%></li>
+            <li><span class="first">Year: </span><%=album.year%></li>
            <% } %>
 
           <% if (album.format) { %>
-            <li><%= album.format.join(', ') %></li>
+            <li><span class="first">Format: </span><%= album.format.join(', ') %></li>
           <% } %>
 
           <% if (album.id) { %>
-            <li><%=album.id%></li>
+            <li><span class="first">Discogs ID: </span><%=album.id%></li>
           <% } %>
 
           <% if ((album.style) && (album.style.length !== 0) ){ %>
-            <li><%=album.style%></li>
+            <li><span class="first">Style: </span><%=album.style%></li>
            <% } %>
 
           <% if (album.community) { %>
-              <li>Want: <%=album['community'].want%>, Have: <%=album['community'].have%></li>
+            <p class="first">Community</p>
+              <li><span class="first">Want: </span> <%=album['community'].want%> <span class="first">Have: </span> <%=album['community'].have%></li>
           <% } %>
 
-          <li><button class="add" type="submit">Save to Favorites</a></li>
-
         </ul>
-        </div><!-- four columns -->
-      <!-- </li> -->
+
+    </div><!-- inner six -->
+
+
+
+
+        </div><!-- six columns -->
+
     <%  counter++ %>
       <% }) %> <!-- for each -->
 
-       <!-- ol -->
+
 
     <% } else { %>
 

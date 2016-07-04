@@ -1,13 +1,13 @@
 $(document).ready(function() {
     console.log('doin it')
 
-$('ul').on('click', '.add', function(){
+$('.add').on('click', function(){
   console.log('clicked')
 
-  let favArea = $(this).closest('ul')
-  let favTitle = favArea.find('.title').text()
+  let favArea = $(this).closest('.six')
+  let favTitle = favArea.next().children().first().find('h6').text()
   let favURL = favArea.find('img').attr('src')
-
+  console.log(favArea)
   console.log(favTitle, 'favTitle')
   console.log(favURL, 'favImage')
 
@@ -24,7 +24,7 @@ $('ul').on('click', '.add', function(){
       }
 
 
-     })//end ajax
+    })//end ajax
 $(this).text('Done & Dusted').prop('disabled', true);
 })//end click
 

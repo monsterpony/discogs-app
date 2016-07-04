@@ -9,7 +9,7 @@ body {
 }
 
 .top {
-  padding-top:2em;
+  padding-top:3em;
 }
 
 .bottom {
@@ -33,9 +33,9 @@ ul {
 nav ul {
   display: block;
   padding: 1em 0;
-  background-color: black;
   height: 2em;
-  text-align: right
+  text-align: right;
+  margin-bottom: 0;
 }
 
 nav li {
@@ -102,9 +102,19 @@ nav input[type="submit"]:hover {
 
 header {
   background-color: #000;
+  height:  4.5em;
 }
 
 /*FORMS*/
+
+.first {
+  font-weight: bold;
+}
+
+p.first {
+  margin-bottom: 0;
+
+}
 
 .hide {
   display: none;
@@ -128,7 +138,7 @@ button:disabled {
 
 input[type="email"], input[type="number"], input[type="search"], input[type="text"], input[type="tel"], input[type="url"], input[type="password"], textarea, select {
 height: 2em;
-font-size: 2em;
+font-size: 1.5em;
 }
 
 input[type="submit"]:focus {
@@ -158,8 +168,41 @@ input[type=text]:focus, textarea:focus {
 
 /*HOME PAGE*/
 
+.bg {
+  background-image: url('/images/bg.jpg');
+  background-size:cover;
+  background-color: black;
+}
+
+body.home {
+
+background: #232526; /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #232526 , #414345); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #232526 , #414345); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-bottom: 2px solid red;
+}
+
+.overlay {
+  color: #fff;
+}
+
+.overlay h1 {
+  text-align: center;
+  padding-top:1em;
+}
+
+
  .home select, .home input, .dig-deep select {
   width: 100%;
+}
+
+.dig-deep {
+  border-bottom: 2px solid red;
 }
 
 input:focus {
@@ -167,7 +210,12 @@ input:focus {
 }
 
 .home button {
-  margin-bottom: 6em;
+  background-color: red;
+  color: #fff;
+}
+
+.home h4 {
+  padding: 3em;
 }
 
 .row.results {
@@ -189,6 +237,13 @@ input:focus {
     padding: 3em 0;
     color: white;
     height: 100vh;
+
+
+background: #000000; /* fallback for old browsers */
+background: -webkit-linear-gradient(to top, #000000 , #434343); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to top, #000000 , #434343); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
 }
 
 .user form {
@@ -205,18 +260,23 @@ input[type="text"], input[type="password"] {
 }
 
 input[type="submit"] {
-  background-color: #fff;
+  background-color: red;
   display: block;
   margin: 2em auto;
+  color: white;
 }
 
 input[type="submit"]:hover {
-  color: black;
+  color: #ccc;
 }
 
 /*SEARCH RESULTS*/
 .search-list li {
   text-align: left;
+  color: #efefef;
+      border-bottom: 1px solid grey;
+    margin-bottom: 1rem;
+    font-size: .9em;
 }
 
 li.first-word span {
@@ -240,13 +300,12 @@ img.alt-image {
 
 .album-search-return {
     border: 1px solid #ccc;
-    background-color: #edc951;
+    background-color: rgba(209, 213, 214, 0.2);
     margin-bottom: 0;
     padding: 10px;
 }
 
 .expanded {
-  background-color: #023349;
   padding: 10px;
 }
 
@@ -256,8 +315,9 @@ img.alt-image {
   text-transform: capitalize;
  }
 
+
+
  .fav-wrap {
-  background-color: #000;
   text-align: center;
   padding: 1em;
   position: relative;
@@ -282,6 +342,46 @@ img.alt-image {
   background-color: #fff;
  }
 
+ /*RESULTS*/
+ .dig-inner {
+  border: 1px solid #000;
+  padding: 1em;
+ }
+
+ .result-wrap {
+  text-align: center;
+  border-right: 1px solid #000;
+ }
+
+ .result-wrap button {
+  background-color: #1EAEDB;
+  color: #fff;
+ }
+
+ .color {
+  height: 100px;
+  width: 100px;
+  display: inline-block;
+  border: 1px solid #ccc;
+ }
+
+ .one {
+  background-color: red;
+  color: white;
+ }
+
+ .two {
+  background-color: purple;
+ }
+
+ .color.three {
+  background-color: pink;
+ }
+
+ .color-select {
+  border: 1px solid #000;
+  opacity: .5;
+ }
 
 
 /*SKELETON GRID*/

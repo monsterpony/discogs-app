@@ -3,16 +3,20 @@
 <head>
   <% include ./partials/head %>
 </head>
-<body>
+<body class='home'>
 <% include ./partials/header %>
+<div class='bg'>
+<div class="overlay">
 
 
-<div class="container home">
-  <div class="row">
+  <div class="row top container">
    <h1>Welcome The Discogs Database</h1>
    <h4>Use the quick search option below to find an album or artist on the fly, or to satisfy the record nerd within, dig deep with our account holder search feature.</h4>
   </div><!-- //end row -->
-  <div class="row">
+  </div><!-- overlay -->
+  </div><!-- bg -->
+  <div class="container home">
+  <div class="row home-search top bottom">
 
       <div class="columns four">
           <select name="type" id="selectChoice">
@@ -29,7 +33,7 @@
 
   <div class="row">
 
-    <div class="column twelve">
+    <div class="column twelve bottom">
     <div class="alert hide">
       <p class='error'>Please Enter a Search Name or Title</p>
     </div>

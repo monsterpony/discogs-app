@@ -1,3 +1,6 @@
+
+
+
 $(document).ready(function() {
     console.log('roll\'n')
 
@@ -42,9 +45,9 @@ $('.search-button').on('click', function(e) {
                                         let $imageWrap = $('<div>').addClass('image-wrap');
                                         let $threeCol = $('<div>').addClass('three columns album-cards');
                                         let $ul = $('<ul>').addClass('album-search-return');
-                                        let $liTitle = $('<li>').addClass('first-word').text('Title: ' + album.title);
-                                        let $liYear = $('<li>').addClass('first-word').text('Year: ' + album.year);
-                                        let $liFormat = $('<li>').addClass('first-word').text('Format: ' + album.format.join(', '));
+                                        let $liTitle = $('<li>').addClass('first-word').text(album.title);
+                                        let $liYear = $('<li>').addClass('first-word').text(album.year);
+                                        let $liFormat = $('<li>').addClass('first-word').text(album.format.join(', '));
 
 
                                        //$liButton.append($favButton);
@@ -76,17 +79,6 @@ $('.search-button').on('click', function(e) {
                                         } //end if
 
                                         counter++;
-                                        $('.search-list').append($currRow);
-                                         $('li.first-word').each(function() {
-                                            var txt = $(this).html();
-                                            var index = txt.indexOf(' ');
-                                            if (index == -1) {
-                                              index = txt.length;
-                                            }
-                                            $(this).html(
-                                                 '<span>' + txt.substring(0, index) + '</span>'
-                                            + txt.substring(index, txt.length));
-                                                });//end first-word
 
                                     }); //end for each
                                     //http://ulven.org/how-to-do-a-first-word-pseudo-element-with-jquery/
