@@ -210,9 +210,6 @@ input:focus {
   color: #fff;
 }
 
-.home h4 {
-  padding: 3em 0;
-}
 
 .row.results {
     border-bottom: 1px solid #ccc;
@@ -240,11 +237,6 @@ background: -webkit-linear-gradient(to top, #000000 , #434343); /* Chrome 10-25,
 background: linear-gradient(to top, #000000 , #434343); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 
-}
-
-.user form {
-    width: 40%;
-    margin: 5% auto 0 auto;
 }
 
 label {
@@ -503,6 +495,20 @@ nav li {
     color: #fff;
 }
 
+.user form {
+    width: 80%;
+    margin: 5% auto 0 auto;
+}
+
+.overlay h1 {
+  padding-top: 0;
+}
+
+.home h4 {
+  color: #ccc;
+  font-size: 1.2em;
+}
+
 }/*end mobile*/
 
 @media (min-width: 550px){
@@ -537,7 +543,24 @@ background-position:center;
     display:none;
   }
 
+
+
+
+}/*phone tablet*/
+
+@media (min-width: 550px){
+
+  .home h4 {
+    padding: 2em 0;
+    color: #fff;
+    font-size: 2em;
+  }
+
 }
+
+
+
+
 
 @media (min-width: 790px){
     .three.columns {
@@ -548,13 +571,15 @@ background-position:center;
     border-bottom: 0;
   }
 
+  .user form {
+    width: 60%;
+}
+
 }
 
 /* Larger than tablet */
-@media (max-width: 791px) {
-.home h4 {
-    padding: 1em 0;
-  }
+@media (min-width: 791px) {
+
 
 
 }
@@ -582,6 +607,15 @@ div.six div.six.columns{
 
   button.leave-modal {
     padding: 0 2em;
+}
+
+.user form {
+    width: 40%;
+}
+
+ .home h4 {
+  padding: 3em 0;
+  color: #fff;
 }
 
 
