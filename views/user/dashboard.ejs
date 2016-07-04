@@ -14,13 +14,11 @@
           <div class='color three'></div>
         </div>
 
-
-
-        <h1> Welcome, <%= user.fname %> <%= user.lname %> </h1>
+        <h1> Welcome, <%= user.fname %>!</h1>
 
         <% if(user.favorites.length) { %>
           <div class="row">
-            <h4>Favorites: </h4>
+            <h4>Your Favorites: </h4>
           </div>
           <!-- row -->
 
@@ -40,7 +38,7 @@
                 <div class="columns three">
                   <section class='fav-wrap'>
                     <h6 class='user-title'><%= user.favorites[i].title %></h6>
-                    <img src="<%= user.favorites[i].url %>">
+                    <img class='alt-image' src="<%= user.favorites[i].url %>">
                     <button class="remove" type='submit'>Remove</button>
                   </section>
                 </div>

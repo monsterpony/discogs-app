@@ -58,6 +58,10 @@ nav li a {
   font-size: 1.2em;
 }
 
+.active {
+  color: red;
+}
+
 nav li a:hover {
   color: white;
 }
@@ -161,7 +165,7 @@ input[type=text]:focus, textarea:focus {
 /*HOME PAGE*/
 
 .bg {
-  background-image: url('/images/bg.jpg');
+  /*background-image: url('/images/bg.jpg');*/
   background-size:cover;
   background-color: black;
 }
@@ -207,7 +211,7 @@ input:focus {
 }
 
 .home h4 {
-  padding: 3em;
+  padding: 3em 0;
 }
 
 .row.results {
@@ -319,12 +323,8 @@ img.alt-image {
   opacity: .5;
  }
 
- .user-title {
-  color: #fff;
- }
-
  .favorites {
-  background-color: black;
+  background-color: #efefef;
   border-bottom: 2px solid #ccc;
  }
 
@@ -359,10 +359,9 @@ img.alt-image {
 }
 
  .color {
-  height: 100px;
-  width: 100px;
+  height: 2em;
+  width: 2em;
   display: inline-block;
-  border: 1px solid #ccc;
  }
 
  .one {
@@ -371,11 +370,11 @@ img.alt-image {
  }
 
  .two {
-  background-color: purple;
+  background-color: grey;
  }
 
  .color.three {
-  background-color: pink;
+  background-color: black;
  }
 
  .color-select {
@@ -383,11 +382,103 @@ img.alt-image {
   opacity: .5;
  }
 
+/* MODAL*/
+.outer-modal {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0,0,0, .5);
+  z-index: 1;
+}
 
+.inner-modal {
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.inner-modal h3 {
+  font-size: 2em;
+  padding: 2em;
+}
+
+button.leave-modal {
+  position: absolute;
+  right: 1em;
+  bottom: 0;
+}
+
+/*VIDEO*/
+
+video.fullscreen {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  transform: translate(-50%, -50%);
+}
 /*SKELETON GRID*/
 
 .three.columns {
   width: 25%;
   margin-left: 0;
+}
+
+/*QUERIES*/
+
+/* Mobile first queries */
+
+/* Larger than mobile */
+@media (min-width: 400px) {
+ .three.columns {
+    width: 100%;
+  }
+
+}
+
+/* Larger than phablet */
+@media (max-width: 550px) {
+  .four.columns {
+    width: 100%;
+  }
+
+
+}
+
+@media (min-width: 790px){
+    .three.columns {
+    width: 50%;
+  }
+
+}
+
+/* Larger than tablet */
+@media (max-width: 791px) {
+.home h4 {
+    padding: 1em 0;
+  }
+
+
+}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {
+
+
+}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {
+.three.columns {
+  width: 25%;
+}
+
 }
 

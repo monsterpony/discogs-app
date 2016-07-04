@@ -2,6 +2,14 @@ $(document).ready(function() {
   console.log('roll\'n')
 
 
+//Add Active Class
+     var path = window.location.href;
+     $('ul a').each(function() {
+      if (this.href === path) {
+       $(this).addClass('active');
+      }
+     });
+
 
   $('.search-button').on('click', function(e) {
       e.preventDefault()

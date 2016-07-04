@@ -66,6 +66,16 @@ $(document).ready(function() {
         $(this).parent().remove()
       }) //end click
 
+    $('.logout').hover(function(){
+        $('.outer-modal').removeClass('hide');
+        $(this).off('mouseenter mouseleave')
+      })
+
+    $('.leave-modal').on('click', function(){
+       $('.outer-modal').addClass('hide');
+
+    })
+
 
 
 

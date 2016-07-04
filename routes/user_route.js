@@ -32,11 +32,6 @@ userRouter.get('/login', function(req, res) {
   })
 })
 
-// userRouter.get('/dashboard', function(req, res){
-//   res.render('user/dashboard', {user: req.session.user})
-// })
-
-
 /* USER PROFILE */
 userRouter.get('/dashboard', getCollection, function(req, res) {
   res.render('user/dashboard', {
