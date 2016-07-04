@@ -128,14 +128,6 @@ p.first {
   font-size: 2em;
 }
 
-button:disabled {
-  background-color: #ccc;
-  border:none;
-  cursor: default;
-  color: #555;
-}
-
-
 input[type="email"], input[type="number"], input[type="search"], input[type="text"], input[type="tel"], input[type="url"], input[type="password"], textarea, select {
 height: 2em;
 font-size: 1.5em;
@@ -356,7 +348,15 @@ img.alt-image {
  .result-wrap button {
   background-color: #1EAEDB;
   color: #fff;
+  margin-bottom: 2em;
  }
+
+ .result-wrap button:disabled {
+  background-color: #ccc;
+  border:none;
+  cursor: default;
+  color: #555;
+}
 
  .color {
   height: 100px;

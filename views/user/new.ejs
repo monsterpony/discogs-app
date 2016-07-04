@@ -1,23 +1,26 @@
 <!-- //submit new user form -->
 <!DOCTYPE html>
 <html>
-<head>
-   <% include ../partials/head %>
-</head>
-<body>
-  <% include ../partials/header %>
-<div class='new form user'>
-  <form action="/user/new" method="post">
-    <label for="">First Name:</label>
-    <input type='text' name='fname' required>
-    <label for="">LastName:</label>
-    <input type='text' name='lname' required>
-    <label for="">Email:</label>
-    <input type="text" name="email" required>
-    <label for="">Password:</label>
-    <input type="password" name="password" required>
-    <input type="submit" value="Create New User">
-  </form>
-</div>
-</body>
+
+  <head>
+    <% include ../partials/head %>
+  </head>
+
+  <body>
+    <% include ../partials/header %>
+      <div class='new form user'>
+        <form action="/user/new" method="post">
+          <label for="">First Name:</label>
+          <input type='text' name='fname' required>
+          <label for="">LastName:</label>
+          <input type='text' name='lname' required>
+          <label for="">Email:</label>
+          <input type="text" name="email" required>
+          <label for="">Password:</label>
+          <input type="password" name="password" required>
+          <input type="submit" value="Create New User">
+        </form>
+      </div>
+  </body>
+
 </html>

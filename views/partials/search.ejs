@@ -1,21 +1,27 @@
 <div class="dig-deep top">
-<form action="/api/dig" method="get">
-  <div class="row">
-        <div class="four columns">
-          <select name="type" id="selectChoice">
-                  <option value="artist">Search Artist</option>
-                  <option value="title">Search Title</option>
-           </select>
-        </div><!-- four -->
-       <div class="eight columns">
-          <input name="value" type="text" placeholder="Enter Artist or Title" id="searchInput" required>
-      </div><!-- eight -->
-  </div><!-- row -->
-  <div class="row">
-    <div class="columns twelve">
-      <button class value='submit'>Search</button>
-    </div><!-- twelve -->
-  </div><!-- row -->
+  <form action="/api/dig" method="get">
+    <div class="row">
+      <div class="four columns">
+        <select name="type" id="selectChoice">
+          <option value="artist">Search Artist</option>
+          <option value="title">Search Title</option>
+        </select>
+      </div>
+      <!-- four -->
+      <div class="eight columns">
+        <input name="value" type="text" placeholder="Enter Artist or Title" id="searchInput" required>
+      </div>
+      <!-- eight -->
+    </div>
+    <!-- row -->
+    <div class="row">
+      <div class="columns twelve">
+        <button class value='submit'>Search</button>
+      </div>
+      <!-- twelve -->
+    </div>
+    <!-- row -->
 
-</form>
-</div><!-- dig-deep -->
+  </form>
+</div>
+<!-- dig-deep -->

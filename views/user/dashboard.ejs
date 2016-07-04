@@ -1,51 +1,56 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <% include ../partials/head %>
-</head>
-<body>
-<% include ../partials/header %>
-<div class="container dashboard">
-<div class='change'>
-<div class='color one'></div>
-<div class='color two'></div>
-<div class='color three'></div>
-</div>
+
+  <head>
+    <% include ../partials/head %>
+  </head>
+
+  <body>
+    <% include ../partials/header %>
+      <div class="container dashboard">
+        <div class='change'>
+          <div class='color one'></div>
+          <div class='color two'></div>
+          <div class='color three'></div>
+        </div>
 
 
 
-    <h1> Welcome, <%= user.fname %> <%= user.lname %> </h1>
+        <h1> Welcome, <%= user.fname %> <%= user.lname %> </h1>
 
-<% if(user.favorites) { %>
-<div class="row">
-    <h4>Favorites: </h4>
-</div><!-- row -->
-
-  <% let counter = 0 %>
-
-<div class="row">
-
-
-  <% for(let i =0; i < user.favorites.length; i++){ %>
-
-<% if (counter % 4 === 0) { %>
+        <% if(user.favorites.length) { %>
+          <div class="row">
+            <h4>Favorites: </h4>
           </div>
-             <div class="row favorites">
-         <% } %><!-- counter -->
+          <!-- row -->
 
-    <div class="columns three">
-    <section class='fav-wrap'>
-    <h6 class='user-title'><%= user.favorites[i].title %></h6>
-    <img src="<%= user.favorites[i].url %>">
-    <button class="remove" type='submit'>Remove</button>
-    </section>
-    </div>
-    <%  counter++ %>
-    <% } %><!-- end for loop -->
+          <% let counter = 0 %>
+
+            <div class="row">
 
 
-  <% } else { %>
-      <h3>Hey <span class="user-fname"><%= user.fname %></span>,why not add some favorites? Find them in a Deep Dig!
+              <% for(let i =0; i < user.favorites.length; i++){ %>
+
+                <% if (counter % 4 === 0) { %>
+            </div>
+            <div class="row favorites">
+              <% } %>
+                <!-- counter -->
+
+                <div class="columns three">
+                  <section class='fav-wrap'>
+                    <h6 class='user-title'><%= user.favorites[i].title %></h6>
+                    <img src="<%= user.favorites[i].url %>">
+                    <button class="remove" type='submit'>Remove</button>
+                  </section>
+                </div>
+                <%  counter++ %>
+                  <% } %>
+                    <!-- end for loop -->
+
+
+                    <% } else { %>
+                      <h3>Hey <span class="user-fname"><%= user.fname %></span>,why not add some favorites? Find them in a Deep Dig!
   <% } %> <!-- end if/else undefined -->
 </div><!-- row -->
 </div><!-- end wrapper -->
@@ -53,4 +58,3 @@
 
 </body>
 </html>
-

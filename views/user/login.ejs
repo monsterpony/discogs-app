@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
-   <% include ../partials/head %>
-</head>
-<body>
-<% include ../partials/header %>
-    <div class='login form user'>
-      <form action="/user/login" method="post">
-        <label for="">Email:</label>
-        <input type="text" name="email" required>
-        <label for="">Password</label>
-        <input type="password" name="password" required>
-        <input type="submit" value="Login">
-      </form>
-    </div><!-- login -->
+
+  <head>
+    <% include ../partials/head %>
+  </head>
+
+  <body>
+    <% include ../partials/header %>
+      <div class='login form user'>
+        <form action="/user/login" method="post">
+          <label for="">Email:</label>
+          <input type="text" name="email" required>
+          <label for="">Password</label>
+          <input type="password" name="password" required>
+          <input type="submit" value="Login">
+        </form>
+      </div>
+      <!-- login -->
 
 
+  </body>
 
-
-</body>
 </html>
