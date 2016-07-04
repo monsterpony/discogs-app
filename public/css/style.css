@@ -509,7 +509,7 @@ footer a:hover {
 
 /*FLEX BOXES*/
 
-.flex-row {
+./*flex-row {
     display: -webkit-flex;
     display: flex;
     min-height: 0;
@@ -534,7 +534,7 @@ footer a:hover {
     box-sizing: border-box;
     min-height: 0;
     min-width: 0;
-}
+}*/
 
 
 /*QUERIES*/
