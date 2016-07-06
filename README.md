@@ -15,13 +15,14 @@ Description: This app allows guests and users to search the Discogs api based on
 *I would love for this app is to search the api and return the current price reflected for the chosen album (for both guests and users) - but in reading the documenation this requires the user to have their own Discogs account (not required to use my app) and an OAUTH private key.*
 
 
-### Wireframe
-Version 1
+## Wireframe
+
+ ###Version 1
 * Potential changes around possibilities of accessing images/price
 
 ![wireframe](/public/images/wireframe_quick.jpg)
 
-Version 2
+###Version 2
 ![wireframe](/public/images/wireframe_v2.jpg)
 
 
