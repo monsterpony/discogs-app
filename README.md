@@ -6,7 +6,7 @@ Description: This app allows guests and users to search the Discogs api based on
 
 * As a guest, I can search the database, to find a specific title/artist.
 * As a guest, I can create an account, so I can save information about albums in my account
-* As a user, I can search the database, to find a specific title/artist, and additional information that I cannot accesses in a guest search
+* As a user, I can search the database, to find a specific title/artist, and additional information that I cannot access in a guest search
 * As a user, I can login to my account, to access stored data
 * As a user, I can add add an item to my collection
 * As a user, I can delete an item from my collection
