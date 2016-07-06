@@ -1,6 +1,6 @@
 # Discog App
 
-Description: This app allows guests and users to search the Discogs api based on an Artist or Title. If you create an account, you can add/remove favorites to you collection, and access a more comprehensive search feature.
+Description: This app allows guests and users to search the Discogs api based on an Artist or Title. If you create an account, you can add/remove favorites to you collection and access a more comprehensive search feature.
 
 ## User Stories
 
@@ -20,6 +20,10 @@ Description: This app allows guests and users to search the Discogs api based on
 
 ![wireframe](/public/images/wireframe_quick.jpg)
 
+###Flow Chart 
+
+![wireframe](/public/images/discogsApp_flowchart.jpg)
+
 
 
 ##SPECIAL THANKS
@@ -33,9 +37,8 @@ Skeleton, jQuery, Node JS, Heroku, MLab, Discogs API, CSS, HTML, JavaScript, Mon
 
 
 For Database help:
-http://mherman.org/blog/2014/04/15/handling-ajax-calls-with-node-dot-js-and-express-part-5/#.V3iPTJMrJE5
+* http://mherman.org/blog/2014/04/15/handling-ajax-calls-with-node-dot-js-and-express-part-5/#.V3iPTJMrJE5
+* https://stormpath.com/blog/everything-you-ever-wanted-to-know-about-node-dot-js-sessions
 
-https://stormpath.com/blog/everything-you-ever-wanted-to-know-about-node-dot-js-sessions
-
-For Current Item help: 
-http://stackoverflow.com/questions/20060467/add-active-navigation-class-based-on-url
+For Active State Current LI: 
+* http://stackoverflow.com/questions/20060467/add-active-navigation-class-based-on-url
