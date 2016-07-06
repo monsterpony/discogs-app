@@ -17,7 +17,7 @@ Description: This app allows guests and users to search the Discogs api based on
 
 ## Wireframe
 
- ###Version 1
+ ### Version 1
 * Potential changes around possibilities of accessing images/price
 
 ![wireframe](/public/images/wireframe_quick.jpg)
