@@ -40,7 +40,7 @@ Description: This app allows guests and users to search the Discogs api based on
 Discogs API: https://www.discogs.com/developers/
 Discogs API Forum: https://www.discogs.com/forum/topic/1082
 
-Skeleton, jQuery, Node JS, Heroku, MLab, Discogs API, CSS, HTML, JavaScript, MongoDB, Express, Ajax, Adobe Illustrator, Adobe Photoshop
+Skeleton, jQuery, Node JS, Heroku, MLab, Discogs API, CSS, HTML, JavaScript, MongoDB, Express, Ajax, Adobe Illustrator, Adobe Photoshop, MIRO Video, Icon Slate
 
 
 For Database help:
