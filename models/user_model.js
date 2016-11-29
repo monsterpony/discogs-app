@@ -1,10 +1,9 @@
-const {
-    MongoClient
-} = require('mongodb');
+const { MongoClient } = require('mongodb');
 const dbConnection = process.env['MONGODB_URI'] || 'mongodb://localhost:27017/users';
 const bcrypt = require('bcrypt');
 const salt = bcrypt.genSalt(10);
 //callback - as soon as createSecure creates secure passwork, fire the callback function (saveUser)
+
 function createSecure(email, password, callback) {
         bcrypt.genSalt(function(err, salt) {
                 bcrypt.hash(password, salt, function(err, hash) {
@@ -14,10 +13,15 @@ function createSecure(email, password, callback) {
     } //end createSecure
 
 function createUser(req, res, next) {
-        createSecure(req.body.email, req.body.password, saveUser)
+    //first run check to validate user
+    //if null then create secure...
+    //else...console.log err user exists
+
+        createSecure(req.body.email, req.body.password, saveUser);
 
         function saveUser(email, hash) {
                 //fires off whatever is in our req.body
+
                 MongoClient.connect(dbConnection, function(err, db) {
                         let userInfo = {
                                 fname: req.body.fname,
