@@ -1,16 +1,16 @@
-const express     = require('express')
-const app         = express()
-const PORT        = process.env.PORT || 3000
-const logger      = require('morgan')
-const path        = require('path')
-const bodyParser  = require('body-parser')
-const session     = require('express-session')
+const express        = require('express')
+const app            = express()
+const PORT           = process.env.PORT || 3000
+const logger         = require('morgan')
+const path           = require('path')
+const bodyParser     = require('body-parser')
+const session        = require('express-session')
 const methodOverride = require('method-override')
 
-const recordRoute = require('./routes/record_route')
-const userRoute   = require('./routes/user_route')
-const homeRoute   = require('./routes/home_route')
-const apiRoute    = require('./routes/api_route')
+const recordRoute    = require('./routes/record_route')
+const userRoute      = require('./routes/user_route')
+const homeRoute      = require('./routes/home_route')
+const apiRoute       = require('./routes/api_route')
 
 
 app.use(logger('dev'));
