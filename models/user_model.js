@@ -45,9 +45,16 @@ function createUser(req, res, next) {
             passwordDigest: hash,
             favorites: []
         });
-        user.save(function(err) {
-            if (err) throw (err);
-            next();
+        user.save(function(error) {
+            //if (err) throw err;
+            //if (err) return handleError(err);
+            if (error) {
+              res.user = null;
+              res.error = null;
+              next()
+            } else {
+                next();
+            }
         });
 
 
@@ -71,7 +78,7 @@ function loginUser(req, res, next) {
     let password = req.body.password
 
     User.findOne({ 'email': email }, function(err, user) {
-            if (err) return handleError(err);
+            if (err) throw err;
             if (user === null) {
                 console.log('cannot find user with email', email);
                 res.error = null;
