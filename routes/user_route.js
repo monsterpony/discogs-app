@@ -19,7 +19,7 @@ userRouter.post('/new', createUser, loginUser, function(req, res) {
     req.session.user = res.user;
     if (res.error === null) {
         res.render('user/new', {
-            user: req.session.user,
+            user: null,
             error: "Oops! There's already an account with this email address!"
         });
     } else {
