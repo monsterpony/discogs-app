@@ -66,11 +66,6 @@ function createUser(req, res, next) {
 } //end createUser
 //LOGIN
 
-function loginError(req, res, next){
-  console.log('HIT loginError');
-  console.log(req)
-}
-
 function loginUser(req, res, next) {
     let email = req.body.email
     let password = req.body.password
@@ -79,13 +74,17 @@ function loginUser(req, res, next) {
             if (err) return handleError(err);
             if (user === null) {
                 console.log('cannot find user with email', email);
-                res.error = user;
+                res.error = null;
                 next()
             } else if (bcrypt.compareSync(password, user.passwordDigest)) {
                 res.user = user;
                 next();
             } else if (!bcrypt.compareSync(password, user.passwordDigest)) {
-                console.log('womp womp not a password')
+              //this sends out user but doesn't login...get's user by email
+              //user returns entire user.
+                console.log('Incorrect password')
+                res.error = null;
+                next();
             } //end if
 
         }) //end findOne
@@ -231,7 +230,6 @@ function getCollection(req, res, next) {
 module.exports = {
     createUser,
     loginUser,
-    loginError,
     getCollection,
     saveToCollection,
     removeFromCollection
