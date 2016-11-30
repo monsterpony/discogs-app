@@ -6,7 +6,6 @@ const apiRouter = require('express').Router();
 
 
 apiRouter.get('/record', recordModel.showArtist, (req, res) => {
-
   //res.render('music/albums', {albums:res.results});
   res.json(res.results)
 })

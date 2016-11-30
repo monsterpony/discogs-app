@@ -22,7 +22,6 @@ userSchema.plugin(uniqueValidator);
 let User = mongoose.model('User', userSchema);
 
 
-
 //callback - as soon as createSecure creates secure password, fire the callback function (saveUser)
 function createSecure(email, password, callback) {
     bcrypt.genSalt(function(err, salt) {
@@ -67,6 +66,11 @@ function createUser(req, res, next) {
 } //end createUser
 //LOGIN
 
+function loginError(req, res, next){
+  console.log('HIT loginError');
+  console.log(req)
+}
+
 function loginUser(req, res, next) {
     let email = req.body.email
     let password = req.body.password
@@ -75,6 +79,8 @@ function loginUser(req, res, next) {
             if (err) return handleError(err);
             if (user === null) {
                 console.log('cannot find user with email', email);
+                res.error = user;
+                next()
             } else if (bcrypt.compareSync(password, user.passwordDigest)) {
                 res.user = user;
                 next();
@@ -83,6 +89,8 @@ function loginUser(req, res, next) {
             } //end if
 
         }) //end findOne
+
+
 
 
     // MongoClient.connect(dbConnection, function(err, db) {
@@ -103,6 +111,7 @@ function loginUser(req, res, next) {
     //     }) //end mongoClient connect
 } //end loginUser
 
+
 function saveToCollection(req, res, next) {
     //entire favorites array
     let email = req.session.user.email
@@ -110,19 +119,19 @@ function saveToCollection(req, res, next) {
     let url = req.query.url;
 
     User.update({
-                    email: email
-                }, {
-                    $addToSet: {
-                        favorites: {
-                            title: title,
-                            url: url
-                        }
-                    }
-                }, function(err, user) {
-                    if (err) throw err
-                    res.user = user
-                    next()
-                })
+        email: email
+    }, {
+        $addToSet: {
+            favorites: {
+                title: title,
+                url: url
+            }
+        }
+    }, function(err, user) {
+        if (err) throw err
+        res.user = user
+        next()
+    })
 
     // MongoClient.connect(dbConnection, function(err, db) {
     //         db.collection('user').update({
@@ -139,7 +148,7 @@ function saveToCollection(req, res, next) {
     //                 res.user = user
     //                 next()
     //             }) //end dbcollection
-        //}) //end mongoClient
+    //}) //end mongoClient
 } //end save favorite
 
 function removeFromCollection(req, res, next) {
@@ -147,65 +156,82 @@ function removeFromCollection(req, res, next) {
     let email = req.session.user.email
     let title = req.query.title;
     let url = req.query.url;
-    MongoClient.connect(dbConnection, function(err, db) {
-            db.collection('user').update({
-                    email: email
-                }, {
-                    $pull: {
-                        favorites: {
-                            title: title,
-                            url: url
-                        }
-                    }
-                }, function(err, user) {
-                    if (err) throw err
-                    res.user = user;
-                    next()
-                }) //end dbcollection
-        }) //end mongoClient
+
+    User.update({
+            email: email
+        }, {
+            $pull: {
+                favorites: {
+                    title: title,
+                    url: url
+                }
+            }
+        }, function(err, user) {
+            if (err) throw err
+            res.user = user;
+            next()
+        })
+        // MongoClient.connect(dbConnection, function(err, db) {
+        //         db.collection('user').update({
+        //                 email: email
+        //             }, {
+        //                 $pull: {
+        //                     favorites: {
+        //                         title: title,
+        //                         url: url
+        //                     }
+        //                 }
+        //             }, function(err, user) {
+        //                 if (err) throw err
+        //                 res.user = user;
+        //                 next()
+        //             }) //end dbcollection
+        //     }) //end mongoClient
 } //end save favorite
 
 function getCollection(req, res, next) {
     if (req.session && req.session.user) {
-      User.findOne({
-        email: req.session.user.email
-                    },
-            function(err, user) {
-                if (user) {
-                    req.user = user;
-                    delete req.user.password; // delete the password from the session
-                    req.session.user = user; //refresh the session value
-                    res.locals.user = user;
-                    // finishing processing the middleware and run the route
-                    next();
-                } else {
-                    next();
-                } //end if/else
+        User.findOne({
+                    email: req.session.user.email
+                },
+                function(err, user) {
+                    if (user) {
+                        req.user = user;
+                        delete req.user.password; // delete the password from the session
+                        req.session.user = user; //refresh the session value
+                        res.locals.user = user;
+                        // finishing processing the middleware and run the route
+                        next();
+                    } else {
+                        next();
+                    } //end if/else
 
-    })//endfindOne
-        // MongoClient.connect(dbConnection, function(err, db) {
-        //         if (err) throw err;
-        //         db.collection('user').findOne({
-        //                 email: req.session.user.email
-        //             }, function(err, user) {
-        //                 if (user) {
-        //                     req.user = user;
-        //                     delete req.user.password; // delete the password from the session
-        //                     req.session.user = user; //refresh the session value
-        //                     res.locals.user = user;
-        //                     // finishing processing the middleware and run the route
-        //                     next();
-        //                 } else {
-        //                     next();
-        //                 } //end if/else
-        //             }) //end if
-        //     }) //end if
+                }) //endfindOne
+            // MongoClient.connect(dbConnection, function(err, db) {
+            //         if (err) throw err;
+            //         db.collection('user').findOne({
+            //                 email: req.session.user.email
+            //             }, function(err, user) {
+            //                 if (user) {
+            //                     req.user = user;
+            //                     delete req.user.password; // delete the password from the session
+            //                     req.session.user = user; //refresh the session value
+            //                     res.locals.user = user;
+            //                     // finishing processing the middleware and run the route
+            //                     next();
+            //                 } else {
+            //                     next();
+            //                 } //end if/else
+            //             }) //end if
+            //     }) //end if
     } //endif
 } //end getCollection
+
 
 module.exports = {
     createUser,
     loginUser,
+    loginError,
     getCollection,
     saveToCollection,
     removeFromCollection
