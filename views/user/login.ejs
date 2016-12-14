@@ -17,6 +17,11 @@
         </form>
       </div>
       <!-- login -->
+    <%if (error) { %>
+    <div class='error'>
+        <h3><%= error %></h3>
+    </div>
+    <% } %>
 
     <% include ../partials/footer %>
   </body>

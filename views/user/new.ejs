@@ -21,6 +21,11 @@
           <input type="submit" value="Create New User">
         </form>
       </div>
+      <%if (error) { %>
+      <div class='error'>
+          <h3><%= error %></h3>
+      </div>
+    <% } %>
       <% include ../partials/footer %>
   </body>
 

@@ -10,7 +10,7 @@ $(document).ready(function() {
       }
      });
 
-
+//home page guest search
   $('.search-button').on('click', function(e) {
       e.preventDefault()
       console.log('click')
@@ -42,7 +42,7 @@ $(document).ready(function() {
 
 
                 let counter = 1;
-                let $currRow = $('<div>').attr('class', 'row results flex-row');
+                let $currRow = $('<div>').attr('class', 'eq-heights row results flex-row');
 
 
                 if ($searchInput) {
@@ -81,7 +81,7 @@ $(document).ready(function() {
                     //If we are starting a new row, append the last row and set currRow
                     if ((counter > 0) && counter % 4 === 0) {
                       $('.search-list').append($currRow);
-                      $currRow = $('<div>').attr('class', 'row results flex-row');
+                      $currRow = $('<div>').attr('class', 'eq-heights row results flex-row');
 
 
 
