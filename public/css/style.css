@@ -490,16 +490,38 @@ footer a:hover {
 }
 
 /*ICON FONTS*/
-.icon-facebook3:before {
-    content: "\e900";
+/*Thanks icomoon!*/
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?73g33h');
+  src:  url('../fonts/icomoon.eot?73g33h#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?73g33h') format('truetype'),
+    url('../fonts/icomoon.woff?73g33h') format('woff'),
+    url('../fonts/icomoon.svg?73g33h#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
-.icon-twitter3:before {
-    content: "\e901";
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-telegram:before {
+  content: "\ea95";
+}
 .icon-github:before {
-    content: "\e902";
+  content: "\eab0";
 }
 
 
@@ -513,32 +535,8 @@ footer a:hover {
 
 /*FLEX BOXES*/
 
-./*flex-row {
-    display: -webkit-flex;
-    display: flex;
-    min-height: 0;
-    min-width: 0;
-}
-
-.flex-group {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-    flex-direction: column;
-    -webkit-flex: 1 20%;
-    flex: 1 20%;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    justify-content: space-between;
-    padding: 0 0 1em 0;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    min-height: 0;
-    min-width: 0;
-}*/
+/* .flex-row{}
+.flex-group{} */
 
 
 /*QUERIES*/
