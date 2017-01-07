@@ -1,5 +1,3 @@
-//callback - as soon as createSecure creates secure passwork, fire the callback function (saveUser)
-
 const {
     MongoClient
 } = require('mongodb');
@@ -36,37 +34,11 @@ function createSecure(email, password, callback) {
 
 function createUser(req, res, next) {
 
-    //first run check to validate user
-    //if null then create secure...
-    //else...console.log err user exists
-
-        createSecure(req.body.email, req.body.password, saveUser);
-
-        function saveUser(email, hash) {
-                //fires off whatever is in our req.body
-
-                MongoClient.connect(dbConnection, function(err, db) {
-                        let userInfo = {
-                                fname: req.body.fname,
-                                lname: req.body.lname,
-                                email: email,
-                                passwordDigest: hash,
-                                favorites: []
-                            } //userInfo
-                        db.collection('user').insertOne(userInfo, function(err, result) {
-                                if (err) throw err;
-                                next();
-                            }) //end collection
-                    }) //end mongoClient
-            } //end saveUser
-    } //end createUser
-    //LOGIN
-
     //if passes validation run this//
-    createSecure(req.body.email, req.body.password, saveUser)
+    createSecure(req.body.email, req.body.password, saveUser);
 
     function saveUser(email, hash) {
-        //fires off whatever is in our req.body
+    //fires off whatever is in our req.body
 
         let user = new User({
             fname: req.body.fname,
@@ -86,26 +58,14 @@ function createUser(req, res, next) {
                 next();
             }
         });
-
-
-
-        // MongoClient.connect(dbConnection, function(err, db) {
-
-
-
-        //         //userInfo
-        //         db.collection('user').insertOne(user, function(err, result) {
-        //                 if (err) throw err;
-        //                 next();
-        //             }) //end collection
-        //     }) //end mongoClient
-    } //end saveUser
+  }//end saveUser
 } //end createUser
-//LOGIN
 
+
+//LOGIN
 function loginUser(req, res, next) {
-    let email = req.body.email
-    let password = req.body.password
+    let email = req.body.email;
+    let password = req.body.password;
 
     User.findOne({ 'email': email }, function(err, user) {
             if (err) throw err;
@@ -126,25 +86,6 @@ function loginUser(req, res, next) {
 
         }) //end findOne
 
-
-
-
-    // MongoClient.connect(dbConnection, function(err, db) {
-    //         //mongo query from users db inside auth_practice
-    //         db.collection('user').findOne({
-    //                 "email": email
-    //             }, function(err, user) {
-    //                 if (err) throw err;
-    //                 if (user === null) {
-    //                     console.log('cannot find user with email', email);
-    //                 } else if (bcrypt.compareSync(password, user.passwordDigest)) {
-    //                     res.user = user;
-    //                     next();
-    //                 } else if (!bcrypt.compareSync(password, user.passwordDigest)) {
-    //                     console.log('womp womp not a password')
-    //                 } //end if
-    //             }) //end dbcollection
-    //     }) //end mongoClient connect
 } //end loginUser
 
 
@@ -167,24 +108,7 @@ function saveToCollection(req, res, next) {
         if (err) throw err
         res.user = user
         next()
-    })
-
-    // MongoClient.connect(dbConnection, function(err, db) {
-    //         db.collection('user').update({
-    //                 email: email
-    //             }, {
-    //                 $addToSet: {
-    //                     favorites: {
-    //                         title: title,
-    //                         url: url
-    //                     }
-    //                 }
-    //             }, function(err, user) {
-    //                 if (err) throw err
-    //                 res.user = user
-    //                 next()
-    //             }) //end dbcollection
-    //}) //end mongoClient
+    })//end update
 } //end save favorite
 
 function removeFromCollection(req, res, next) {
@@ -207,22 +131,6 @@ function removeFromCollection(req, res, next) {
             res.user = user;
             next()
         })
-        // MongoClient.connect(dbConnection, function(err, db) {
-        //         db.collection('user').update({
-        //                 email: email
-        //             }, {
-        //                 $pull: {
-        //                     favorites: {
-        //                         title: title,
-        //                         url: url
-        //                     }
-        //                 }
-        //             }, function(err, user) {
-        //                 if (err) throw err
-        //                 res.user = user;
-        //                 next()
-        //             }) //end dbcollection
-        //     }) //end mongoClient
 } //end save favorite
 
 function getCollection(req, res, next) {
@@ -243,23 +151,6 @@ function getCollection(req, res, next) {
                     } //end if/else
 
                 }) //endfindOne
-            // MongoClient.connect(dbConnection, function(err, db) {
-            //         if (err) throw err;
-            //         db.collection('user').findOne({
-            //                 email: req.session.user.email
-            //             }, function(err, user) {
-            //                 if (user) {
-            //                     req.user = user;
-            //                     delete req.user.password; // delete the password from the session
-            //                     req.session.user = user; //refresh the session value
-            //                     res.locals.user = user;
-            //                     // finishing processing the middleware and run the route
-            //                     next();
-            //                 } else {
-            //                     next();
-            //                 } //end if/else
-            //             }) //end if
-            //     }) //end if
     } //endif
 } //end getCollection
 
