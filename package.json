@@ -12,6 +12,7 @@
     "ejs": "^2.4.2",
     "express": "^4.14.0",
     "express-session": "^1.13.0",
+    "lodash": "^4.17.4",
     "method-override": "^2.3.6",
     "mongodb": "^2.2.11",
     "mongoose": "^4.7.6",
