@@ -1,7 +1,7 @@
 {
   "name": "discogs-app",
   "engines": {
-    "node": "6.2.1"
+    "node": "6.11.1"
   },
   "version": "1.0.0",
   "description": "Discogs API: https://www.discogs.com/developers/ Discogs API Forum: https://www.discogs.com/forum/topic/1082",
