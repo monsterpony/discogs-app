@@ -22,18 +22,18 @@ Description: This app allows guests and users to search the Discogs api based on
 
 ![wireframe](/public/images/wireframe_quick.jpg)
 
-###Version 2
+### Version 2
 ![wireframe](/public/images/wireframe_v2.jpg)
 
 
 
-###Flow Chart 
+### Flow Chart 
 
 ![wireframe](/public/images/discogsApp_flowchart.jpg)
 
 
 
-##SPECIAL THANKS
+## SPECIAL THANKS
 
 [Suprit](https://github.com/supritshah1289) and [Celeste](http://celesteglavin.com/) for Mongo Mastership and keeping me from Suicidal Tendencies.
 
