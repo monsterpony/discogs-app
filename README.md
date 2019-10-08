@@ -2,6 +2,8 @@
 
 Description: This app allows guests and users to search the Discogs api based on an Artist or Title. If you create an account, you can add/remove favorites to you collection and access a more comprehensive search feature.
 
+[Try it out!](https://deep-dig.herokuapp.com/)
+
 ## User Stories
 
 * As a guest, I can search the database, to find a specific title/artist.
