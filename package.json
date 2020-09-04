@@ -14,7 +14,7 @@
     "express-session": "^1.13.0",
     "lodash": "^4.17.4",
     "method-override": "^2.3.6",
-    "mongodb": "^2.2.11",
+    "mongodb": "^3.6.1",
     "mongoose": "^4.7.6",
     "mongoose-unique-validator": "^1.0.3",
     "morgan": "^1.7.0",
